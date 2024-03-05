@@ -10,3 +10,8 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+// please put this where it belongs!!
+.active {
+  display: block !important;
+}
