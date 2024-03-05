@@ -1,0 +1,32 @@
+body html{
+margin: auto;
+padding-top: 20px;
+
+}
+
+.container-show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.round-button {
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  border: 7px solid rgb(49, 102, 201);
+  border-radius: 50%;
+  background-color: #5391C3;
+  color: rgb(66, 64, 64);
+  text-align: center;
+  font-weight: bold;
+  font-family: "Mouse Memoirs", sans-serif;
+  letter-spacing: 3px;
+  font-size: 45px;
+  padding: 90px 80px;
+  text-decoration: none;
+  box-shadow: 10px 10px 10px rgba(2, 2, 0, 0.1);
+}
+
+.round-button:hover {
+  background-color: #c1bfe1;
+}
