@@ -5,14 +5,13 @@ padding-top: 20px;
 }
 
 .container-show {
+  padding: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .round-button {
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
+
   border: 7px solid rgb(49, 102, 201);
   border-radius: 50%;
   background-color: #5391C3;
@@ -29,4 +28,51 @@ padding-top: 20px;
 
 .round-button:hover {
   background-color: #c1bfe1;
+}
+
+.flexbox {
+  display: flex;
+  padding: 19px;
+  margin-top: 80px;
+  justify-content: space-between;
+}
+
+.container-background-image {
+  position: relative;
+  flex: 1;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 120px;
+  height: 170px;
+  object-fit: cover;
+  z-index: -1;
+}
+
+
+.text-container-background-image {
+  position: relative;
+  top: 55%;
+  left: 30%;
+  z-index: 1;
+}
+
+.text-container-background-image p {
+  margin-top: 29px;
+  font-size: 33px;
+  font-family: "Mouse Memoirs", sans-serif;
+  letter-spacing: 5px;
+  font-weight: bolder;
+  color: #5391C3;
+  background-clip: text;
+}
+
+.button-show {
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
