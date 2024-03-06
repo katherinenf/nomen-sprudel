@@ -76,6 +76,7 @@ padding-top: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
 
 @keyframes shake {
   0%, 100% {
@@ -97,5 +98,5 @@ padding-top: 20px;
 
 .shake {
   animation: shake 1s ease-in-out;
-
 }
+
