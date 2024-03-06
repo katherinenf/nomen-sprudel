@@ -1,49 +1,74 @@
 
 </html>
-
  <body>
-<div class="flexbox">
-  <div class="container-background-image">
-      <img src="https://www.freeiconspng.com/uploads/bubble-transparent-hd-png-27.png" alt="Background Image" class="background-image">
-      <div class="text-container-background-image">
-        <p>Der</p>
-      </div>
+    <div class="info-button">
     </div>
 
+    <div class="flexbox">
+      <div class="container-background-image">
+          <img src="https://www.freeiconspng.com/uploads/bubble-transparent-hd-png-27.png" alt="Background Image" class="background-image">
+          <div class="text-container-background-image">
+            <p>Der</p>
+          </div>
+        </div>
 
 
-    <div class="container-background-image">
-      <img src="https://www.freeiconspng.com/uploads/bubble-transparent-hd-png-27.png" alt="Background Image" class="background-image">
-      <div class="text-container-background-image">
-        <p>Die</p>
-      </div>
+
+        <div class="container-background-image">
+          <img src="https://www.freeiconspng.com/uploads/bubble-transparent-hd-png-27.png" alt="Background Image" class="background-image">
+          <div class="text-container-background-image">
+            <p>Die</p>
+          </div>
+        </div>
+
+
+        <div class="container-background-image">
+          <img src="https://www.freeiconspng.com/uploads/bubble-transparent-hd-png-27.png" alt="Background Image" class="background-image">
+          <div class="text-container-background-image">
+            <p>Das</p>
+          </div>
+        </div>
     </div>
 
-
-    <div class="container-background-image">
-      <img src="https://www.freeiconspng.com/uploads/bubble-transparent-hd-png-27.png" alt="Background Image" class="background-image">
-      <div class="text-container-background-image">
-        <p>Das</p>
-      </div>
-    </div>
- </div>
+    <div class="overlay"></div>
 
     <div class="container-show">
-      <div data-controller="answer">
-        <% @words.each do |word|%>
-          <button class="round-button d-none" data-answer-target='noun' data-english=<%= word.english%> data-article=<%= word.article %>>
-          <%= word.german %>
-          </button>
-        <% end %>
-          <h2 class="btn btn-primary" data-answer-target="article" data-action="click->answer#checkAnswer"> der </h2>
-          <h2 class="btn btn-primary" data-answer-target="article" data-action="click->answer#checkAnswer"> die</h2>
-          <h2 class="btn btn-primary" data-answer-target="article" data-action="click->answer#checkAnswer"> das </h2>
-      </div>
-      
-    <div class="button-show">
-      <button class="btn-styling btn-position-play">Quit</button>
+        <button class="round-button">Hund</button>
     </div>
-      
+
+
+    <div class="button-show">
+      <button class="btn-styling btn-position-play"onclick="togglePopup()">Quit</button>
+        <div id="popup" class="popup">
+          <span class="close" onclick="togglePopup()">&times;</span>
+          <p>Are you sure?</p>
+      </div>
+    </div>
+
+   <script>
+    function togglePopup() {
+      var popup = document.getElementById("popup");
+      var overlay = document.querySelector(".overlay");
+      popup.classList.toggle("show");
+      overlay.classList.toggle("show");
+    }
+    </script>
+
   </body>
 </html>
 
+
+
+<div data-controller="answer">
+
+<div>
+  <% @words.each do |word|%>
+    <p class="d-none" data-answer-target='noun' data-english=<%= word.english%> data-article=<%= word.article %>><%= word.german %></p>
+  <% end %>
+</div>
+
+<h2 class="btn btn-primary" data-answer-target="article" data-action="click->answer#checkAnswer"> der </h2>
+<h2 class="btn btn-primary" data-answer-target="article" data-action="click->answer#checkAnswer"> die</h2>
+<h2 class="btn btn-primary" data-answer-target="article" data-action="click->answer#checkAnswer"> das </h2>
+
+</div>
