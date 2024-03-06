@@ -1,0 +1,27 @@
+.container span {
+  display: block;
+  text-transform: uppercase;
+  animation: text 5s infinite;
+}
+
+.text {
+  color: #5391C3;;
+  font-size: 80px;
+  font-family: "Mouse Memoirs", sans-serif;
+  font-weight: bold;
+  margin-bottom: 60px;
+}
+
+@keyframes text {
+  0%{
+    color: transparent;
+    letter-spacing: -28px;
+  }
+  50% {
+    letter-spacing: 14px;
+  }
+  100% {
+    letter-spacing: 2px;
+  }
+}
+
