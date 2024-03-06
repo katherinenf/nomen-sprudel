@@ -5,18 +5,28 @@ export default class extends Controller {
   static targets = ['article', 'noun']
 
   connect() {
+    // set the first word as visible
     this.nounTarget.classList.add('active')
   }
 
+
   checkAnswer(event) {
-    console.log()
     const clickedElement = event.currentTarget
+    const currentNoun = document.querySelector('.active')
+    console.log(currentNoun)
 
-    if (event.target.innerText == document.querySelector('.active').dataset.article) {
-      console.log('Correct!');
+    if (event.target.innerText == currentNoun.dataset.article) {
+      // add the article to the noun bubble
+      currentNoun.innerHTML = `<p>${currentNoun.dataset.article}</p>
+                               <p>${currentNoun.innerText}</p>`
+
+      // pause so the player can see the combination
+      setTimeout(() => {
+        // switch the active element
+        currentNoun.classList.remove('active')
+        currentNoun.nextElementSibling.classList.add('active')
+      }, 1000);
     } else {
-      console.log('Incorrect!');
-
       // Add the "shake" class to the clicked element
       clickedElement.classList.add('shake');
 
@@ -26,4 +36,5 @@ export default class extends Controller {
       }, 3000);
     }
   }
+
 }
