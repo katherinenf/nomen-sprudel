@@ -14,5 +14,7 @@ class PagesController < ApplicationController
   end
 
   def practice_set_up
+    @sets = WordSet.all
   end
+
 end

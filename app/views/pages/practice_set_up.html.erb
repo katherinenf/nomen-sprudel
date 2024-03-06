@@ -2,7 +2,12 @@
 
 <h2 class="choose-set-styling">Choose a set:</h2>
 
-<div class="dropdown-main">
+<%= simple_form_for "url_path", method: :get do |f| %>
+  <%= f.input :set, collection: @sets, label: false, input_html: {class: "dropbtn-styling" } %>
+  <%= f.button :submit, "GO!", class: "btn-styling btn-position-go" %>
+<% end %>
+
+<%# <div class="dropdown-main">
     <button class="dropbtn-styling">cards topic
       <i class="fa fa-caret-down"></i>
     </button>
@@ -11,6 +16,5 @@
       <a href="#">street</a>
       <a href="#">house</a>
     </div>
-</div>
+</div> %>
 
-<%= button_to "GO!", practice_path, method: :get, class: "btn-styling btn-position-go"%>
