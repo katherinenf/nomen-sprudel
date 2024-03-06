@@ -9,6 +9,21 @@ export default class extends Controller {
   }
 
   checkAnswer(event) {
-    console.log(event.target.innerText === document.querySelector('.active').dataset.article)
+    console.log()
+    const clickedElement = event.currentTarget
+
+    if (event.target.innerText == document.querySelector('.active').dataset.article) {
+      console.log('Correct!');
+    } else {
+      console.log('Incorrect!');
+
+      // Add the "shake" class to the clicked element
+      clickedElement.classList.add('shake');
+
+      // Remove the "shake" class after the animation duration (adjust as needed)
+      setTimeout(() => {
+        clickedElement.classList.remove('shake');
+      }, 3000);
+    }
   }
 }

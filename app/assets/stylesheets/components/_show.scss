@@ -30,3 +30,25 @@ padding-top: 20px;
 .round-button:hover {
   background-color: #c1bfe1;
 }
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0px);
+  }
+  25% {
+    transform: translateX(-20px);
+  }
+  50% {
+    transform: translateX(20px);
+  }
+  75% {
+    transform: translateX(-20px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+.shake {
+  animation: shake 1s ease-in-out;
+}
