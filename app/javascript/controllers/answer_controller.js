@@ -13,7 +13,6 @@ export default class extends Controller {
   checkAnswer(event) {
     const clickedElement = event.currentTarget
     const currentNoun = document.querySelector('.active')
-    console.log(currentNoun)
 
     if (event.target.innerText == currentNoun.dataset.article) {
       // add the article to the noun bubble
