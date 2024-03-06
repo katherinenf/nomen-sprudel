@@ -1,3 +1,17 @@
-<p>find me in pages/practice_set_up.html.erb</p>
-<%= link_to "practice", practice_path %>
-<%= link_to "home", home_path %>
+<%= image_tag "logo_small.png", class: "second-logo-styling" %>
+
+<h2 class="choose-set-styling">Choose a set:</h2>
+
+<div class="dropdown-main">
+    <button class="dropbtn-styling">cards topic
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#">animals</a>
+      <a href="#">street</a>
+      <a href="#">house</a>
+    </div>
+</div>
+
+<%= button_to "GO!", "#", method: :get, class: "btn-styling btn-position-go"%>
+

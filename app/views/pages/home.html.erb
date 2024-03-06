@@ -1,22 +1,8 @@
+<%= image_tag "logo_nomen_sprudel.png", width:100 , class: "main-logo-styling" %>
 
-<h2>Choose a set:<h2>
-<div class="dropdown-main">
-    <button class="dropbtn-styling">cards topic
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="#">animals</a>
-      <a href="#">street</a>
-      <a href="#">house</a>
-    </div>
+<%= button_to "practice", practice_set_up_path, method: :get, class: "btn-styling btn-position-practice"%>
 
-<button class="btn-styling btn-position-practice">practice</button>
-<button class="btn-styling btn-position-play">play</button>
+<%= button_to "play", "#" , method: :get, class: "btn-styling btn-position-play"%>
 
-<div>
-<p>Links </p>
-<%= link_to "sign in", user_session_path %>
-<%= link_to "sign up", new_user_registration_path %>
-<%= link_to "practice set up", practice_set_up_path %>
-</div>
-<!-- dropdown-menu -->
+<%= button_to "log in", "#" , method: :get, class: "btn-styling btn-position-log-in"%>
+

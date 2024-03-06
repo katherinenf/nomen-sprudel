@@ -13,11 +13,22 @@ body {
 
 .greeting-styling {
   font-size: 100px;
-  margin-top: 45%;
+  margin-top: 30%;
   margin-left: 10%;
 
   font-family: "Style Script", cursive;
   font-style: normal;
-  color: rgba(83, 145, 195, 0.7);
+  color: rgba(188, 52, 34, 0.8);
+  // text-shadow: 1px -7px 10px #def, 0 0 0 #000, 0px 0px 0px #def;
+}
+
+.choose-set-styling {
+  font-size: 60px;
+  margin-top: 20%;
+  margin-left: 15%;
+
+  font-family: "Mouse Memoirs", sans-serif;
+  font-style: normal;
+  color: rgba(83, 145, 195, 0.8);
   text-shadow: 1px -7px 10px #def, 0 0 0 #000, 0px 0px 0px #def;
 }
