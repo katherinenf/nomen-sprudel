@@ -1,6 +1,33 @@
 
 </html>
-  <body>
+
+ <body>
+<div class="flexbox">
+  <div class="container-background-image">
+      <img src="https://www.freeiconspng.com/uploads/bubble-transparent-hd-png-27.png" alt="Background Image" class="background-image">
+      <div class="text-container-background-image">
+        <p>Der</p>
+      </div>
+    </div>
+
+
+
+    <div class="container-background-image">
+      <img src="https://www.freeiconspng.com/uploads/bubble-transparent-hd-png-27.png" alt="Background Image" class="background-image">
+      <div class="text-container-background-image">
+        <p>Die</p>
+      </div>
+    </div>
+
+
+    <div class="container-background-image">
+      <img src="https://www.freeiconspng.com/uploads/bubble-transparent-hd-png-27.png" alt="Background Image" class="background-image">
+      <div class="text-container-background-image">
+        <p>Das</p>
+      </div>
+    </div>
+ </div>
+
     <div class="container-show">
       <div data-controller="answer">
         <% @words.each do |word|%>
@@ -12,6 +39,11 @@
           <h2 class="btn btn-primary" data-answer-target="article" data-action="click->answer#checkAnswer"> die</h2>
           <h2 class="btn btn-primary" data-answer-target="article" data-action="click->answer#checkAnswer"> das </h2>
       </div>
-    <button class="btn-styling btn-position-play">Quit</button>
+      
+    <div class="button-show">
+      <button class="btn-styling btn-position-play">Quit</button>
+    </div>
+      
   </body>
 </html>
+
