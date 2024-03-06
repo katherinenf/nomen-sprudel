@@ -10,4 +10,7 @@ class PagesController < ApplicationController
       @words << Word.all.sample
     end
   end
+
+  def practice_set_up
+  end
 end
