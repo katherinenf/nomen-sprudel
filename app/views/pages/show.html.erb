@@ -4,7 +4,12 @@
     <div class="container-show">
       <div data-controller="answer">
         <% @words.each do |word|%>
-          <button class="round-button d-none" data-answer-target='noun' data-english=<%= word.english%> data-article=<%= word.article %>>
+          <button class="round-button d-none"
+            data-answer-target='noun'
+            data-english=<%= word.english%>
+            data-article=<%= word.article %>
+            data-mastery='true'
+            data-id=<%= word.id%>>
           <%= word.german %>
           </button>
         <% end %>
