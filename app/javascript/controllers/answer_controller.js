@@ -11,9 +11,9 @@ export default class extends Controller {
 
 
   checkAnswer(event) {
-    console.log()
     const clickedElement = event.currentTarget
     const currentNoun = document.querySelector('.active')
+    console.log(currentNoun)
 
     if (event.target.innerText == currentNoun.dataset.article) {
       // add the article to the noun bubble
@@ -25,9 +25,6 @@ export default class extends Controller {
         // switch the active element
         currentNoun.classList.remove('active')
         currentNoun.nextElementSibling.classList.add('active')
-        // switch visibility
-        currentNoun.classList.classList.toggle('d-none')
-        currentNoun.nextElementSibling.classList.toggle('d-none')
       }, 1000);
     } else {
       // Add the "shake" class to the clicked element
