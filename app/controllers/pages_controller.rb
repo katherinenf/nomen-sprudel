@@ -4,6 +4,8 @@ class PagesController < ApplicationController
   def home
   end
 
+  def practice_set_up; end
+
   def show
     @words = []
     5.times do
