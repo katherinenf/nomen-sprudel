@@ -30,6 +30,7 @@ padding-top: 20px;
   background-color: #c1bfe1;
 }
 
+
 .flexbox {
   display: flex;
   padding: 19px;
@@ -75,4 +76,26 @@ padding-top: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0px);
+  }
+  25% {
+    transform: translateX(-20px);
+  }
+  50% {
+    transform: translateX(20px);
+  }
+  75% {
+    transform: translateX(-20px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+.shake {
+  animation: shake 1s ease-in-out;
+
 }
