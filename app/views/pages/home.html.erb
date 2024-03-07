@@ -1,8 +1,18 @@
-<%= image_tag "logo_nomen_sprudel.png", width:100 , class: "main-logo-styling" %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-6">
 
-<%= button_to "practice", practice_set_up_path, method: :get, class: "btn-styling btn-position-practice"%>
+      <div class="inside">
 
-<%= button_to "play", "#" , method: :get, class: "btn-styling btn-position-play"%>
+        <%= image_tag "logo_nomen_sprudel.png", width:100 , class: "main-logo-styling" %>
 
-<%= button_to "log in", "#" , method: :get, class: "btn-styling btn-position-log-in"%>
+        <%= button_to "practice", practice_set_up_path, method: :get, class: "btn-styling btn-position-practice"%>
 
+        <%= button_to "play", "#" , method: :get, class: "btn-styling btn-position-play"%>
+
+        <%= button_to "log in", "#" , method: :get, class: "btn-styling btn-position-log-in"%>
+
+      </div>
+    </div>
+  </div>
+</div>

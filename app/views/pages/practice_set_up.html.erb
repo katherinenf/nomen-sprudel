@@ -1,9 +1,20 @@
-<%= image_tag "logo_small.png", class: "second-logo-styling" %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-6">
 
-<h2 class="choose-set-styling">Choose a set:</h2>
+      <div class="inside">
 
-<%= simple_form_for "url_path", method: :get do |f| %>
-  <%= f.input :set, collection: @sets, label: false, input_html: {class: "dropbtn-styling" } %>
-  <%= f.button :submit, "GO!", class: "btn-styling btn-position-go" %>
-<% end %>
+        <%= image_tag "logo_small.png", class: "second-logo-styling" %>
 
+        <h2 class="choose-set-styling">Choose a set:</h2>
+
+        <%= simple_form_for "url_path", method: :get do |f| %>
+          <%= f.input :set, collection: @sets, label: false, input_html: {class: "dropbtn-styling" } %>
+          <%= f.button :submit, "GO!", class: "btn-styling btn-position-go" %>
+        <% end %>
+
+      </div>
+
+    </div>
+  </div>
+</div>
