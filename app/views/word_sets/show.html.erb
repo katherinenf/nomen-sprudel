@@ -33,32 +33,31 @@
     <div class="overlay"></div>
 
     <div class="container-show">
-      <div >
-            <div data-answer-target="answers">
+    <div>
+      <div data-answer-target="answers">
         <% @words.each do |word|%>
           <button class="round-button d-none" data-answer-target='noun' data-english=<%= word.english%> data-article=<%= word.article %>>
           <%= word.german %>
           </button>
         <% end %>
-    </div>
-
-    <div class="button-show">
-      <button class="btn-styling btn-position-play"onclick="togglePopup()">Quit</button>
-        <div id="popup" class="popup">
-          <span class="close" onclick="togglePopup()">&times;</span>
-          <p>Are you sure?</p>
       </div>
-    </div>
+
+      <div class="button-show">
+        <button class="btn-styling btn-position-play"onclick="togglePopup()">Quit</button>
+          <div id="popup" class="popup">
+            <span class="close" onclick="togglePopup()">&times;</span>
+            <p>Are you sure?</p>
+          </div>
+      </div>
 
    <script>
-    function togglePopup() {
-      var popup = document.getElementById("popup");
-      var overlay = document.querySelector(".overlay");
-      popup.classList.toggle("show");
-      overlay.classList.toggle("show");
-    }
+      function togglePopup() {
+        var popup = document.getElementById("popup");
+        var overlay = document.querySelector(".overlay");
+        popup.classList.toggle("show");
+        overlay.classList.toggle("show");
+      }
     </script>
-
-
+  </div>
     </body>
 </html>
