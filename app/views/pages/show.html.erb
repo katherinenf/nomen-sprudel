@@ -1,8 +1,25 @@
 
 </html>
-  <body data-controller="answer">
-    <div class="info-button">
+ <body data-controller="answer">
+
+    <div class="container-info-button">
+    <div class="info-button" onclick="togglePopupInfoButton()">i</div>
+    <div id="popup-info-button" class="popup-info-button">
+      <span class="close" onclick="togglePopupInfoButton()">&times;</span>
+      <h2>Tutorial</h2>
+      <p>When a Noun pops up on the big blue button, you can choose the class by clicking on one of the bubbles.
+      If your choice is wrong, the bubble will shake no. If you pick the right class you go on to the next noun challenge. Happy Sprudeling☀️</p>
     </div>
+  </div>
+
+  <script>
+    function togglePopupInfoButton() {
+      var popup = document.getElementById("popup-info-button");
+      var overlay = document.querySelector(".overlay");
+      popup.classList.toggle("show");
+      overlay.classList.toggle("show");
+    }
+  </script>
 
     <div class="flexbox">
       <div class="container-background-image" data-answer-target="article" data-action="click->answer#checkAnswer">
@@ -11,7 +28,6 @@
             <p>der</p>
           </div>
         </div>
-
 
 
       <div class="container-background-image" data-answer-target="article" data-action="click->answer#checkAnswer">
@@ -33,32 +49,41 @@
     <div class="overlay"></div>
 
     <div class="container-show">
-      <div >
+      
             <div data-answer-target="answers">
         <% @words.each do |word|%>
-          <button class="round-button d-none" data-answer-target='noun' data-english=<%= word.english%> data-article=<%= word.article %>>
+          <button class="round-button d-none"
+            data-answer-target='noun'
+            data-english=<%= word.english%>
+            data-article=<%= word.article %>
+            data-mastery='true'
+            data-id=<%= word.id%>>
           <%= word.german %>
           </button>
         <% end %>
-    </div>
 
     <div class="button-show">
-      <button class="btn-styling btn-position-play"onclick="togglePopup()">Quit</button>
-        <div id="popup" class="popup">
-          <span class="close" onclick="togglePopup()">&times;</span>
-          <p>Are you sure?</p>
+      <button class="btn-styling btn-position-play" onclick="togglePopupQuit()">Quit</button>
+      <div id="popup-quit" class="popup-button-show">
+        <span class="close" onclick="togglePopupQuit()">&times;</span>
+        <p>Are you sure?</p>
+        <button class="btn-styling btn-position-play">Yes</button>
+
       </div>
     </div>
 
-   <script>
-    function togglePopup() {
-      var popup = document.getElementById("popup");
-      var overlay = document.querySelector(".overlay");
-      popup.classList.toggle("show");
-      overlay.classList.toggle("show");
-    }
+    <script>
+      function togglePopupQuit() {
+        var popup = document.getElementById("popup-quit");
+        var overlay = document.querySelector(".overlay");
+        popup.classList.toggle("show");
+        overlay.classList.toggle("show");
+      }
     </script>
+  </div>
 
+  <div class="overlay"></div>
 
+    </div>
     </body>
 </html>

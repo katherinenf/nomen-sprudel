@@ -1,4 +1,5 @@
 class WordSetsController < ApplicationController
+
   def index
     @sets  = WordSet.all
     if params["url_path"]
@@ -15,4 +16,5 @@ class WordSetsController < ApplicationController
         render partial: "/shared/list", locals: { words: @words }, formats: [:html] }
     end
   end
+
 end
