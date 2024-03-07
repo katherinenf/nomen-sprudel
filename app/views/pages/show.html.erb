@@ -49,15 +49,13 @@
     <div class="overlay"></div>
 
     <div class="container-show">
-      
+
             <div data-answer-target="answers">
         <% @words.each do |word|%>
           <button class="round-button d-none"
             data-answer-target='noun'
             data-english=<%= word.english%>
-            data-article=<%= word.article %>
-            data-mastery='true'
-            data-id=<%= word.id%>>
+            data-article=<%= word.article %>>
           <%= word.german %>
           </button>
         <% end %>

@@ -46,7 +46,12 @@ export default class extends Controller {
 
       // Add the word to the end of the list
       this.answersTarget.insertAdjacentHTML('beforeend',
-      `<button class="round-button d-none" data-answer-target='noun' data-english=${currentNoun.dataset.english} data-article=${currentNoun.dataset.article}>
+      `<button class="round-button d-none"
+        data-answer-target='noun'
+        data-english=${currentNoun.dataset.english}
+        data-article=${currentNoun.dataset.article}
+        data-mastery='false'
+        data-id=${currentNoun.dataset.id}>
           ${currentNoun.innerText}
           </button>`)
       }
