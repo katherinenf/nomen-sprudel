@@ -1,0 +1,6 @@
+<div data-selection-target="list">
+  <% @words = @set.words %>
+  <% @words.each do |word|%>
+    <li><%= word.article %> <%= word.german %></li>
+  <% end %>
+</div>
