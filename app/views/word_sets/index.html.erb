@@ -1,0 +1,18 @@
+<%= image_tag "logo_small.png", class: "second-logo-styling" %>
+
+<h2 class="choose-set-styling">Choose a set:</h2>
+<div data-controller="selection">
+  <%= simple_form_for "url_path", method: :get, data: {selection_target: "form"} do |f| %>
+    <%= f.input :set, collection: @sets, label: false,
+    input_html: {class: "dropbtn-styling form-select",
+            data: {
+              action: "input->selection#listWords",
+              selection_target: "dropdown"
+              }
+            } %>
+    <%= f.button :submit, "GO!", class: "btn-styling btn-position-go" %>
+  <% end %>
+  
+  <div data-selection-target="list">
+  </div>
+</div>
