@@ -1,17 +1,22 @@
-*, *:before, *:after {
-  box-sizing: border-box;
-}
+// *, *:before, *:after {
+//   box-sizing: border-box;
+// }
 
 body {
   background-color: rgba(142, 195, 174, 0.5);
   margin: 0;
   padding: 0;
-  height: 100vh;
+  min-height: 100vh;
   border: 13px solid #5391c3;
 }
 
 .container{
   margin-top: 20px;
+}
+
+.inside {
+  text-align: center;
+  overflow: hidden;
 }
 
 .choose-set-styling {
