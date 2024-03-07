@@ -39,7 +39,6 @@ export default class extends Controller {
           ${currentNoun.innerText}
           </button>`)
       }
-
       // Remove the "shake" class after the animation duration (adjust as needed)
       setTimeout(() => {
         clickedElement.classList.remove('shake');
