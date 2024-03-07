@@ -1,3 +1,9 @@
-<p>find me in pages/practice_set_up.html.erb</p>
-<%= link_to "practice", practice_path %>
-<%= link_to "home", home_path %>
+<%= image_tag "logo_small.png", class: "second-logo-styling" %>
+
+<h2 class="choose-set-styling">Choose a set:</h2>
+
+<%= simple_form_for "url_path", method: :get do |f| %>
+  <%= f.input :set, collection: @sets, label: false, input_html: {class: "dropbtn-styling" } %>
+  <%= f.button :submit, "GO!", class: "btn-styling btn-position-go" %>
+<% end %>
+

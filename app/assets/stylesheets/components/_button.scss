@@ -1,9 +1,8 @@
 .btn-styling {
-  background-color: #FCB800;
-  background: linear-gradient(45deg,#fbd771, #FCB800, #fbd771);
+  background: linear-gradient(45deg,#e4ac88, #EA9D6D, #e4ac88);
   padding: 15px;
-  height: 70px;
-  width: 70%;
+  height: 70px !important;
+  width: 300px !important;
 
   border: 5px solid #5391c3;
   border-radius: 30px;
@@ -22,11 +21,21 @@
 }
 
 .btn-position-practice {
-  margin-top: 60%;
-  margin-left: 5%;
+  margin-top: 10%;
+  margin-left: 16%;
 }
 
 .btn-position-play {
   margin-top: 25px;
-  margin-left: 5%;
+  margin-left: 16%;
+}
+
+.btn-position-log-in {
+  margin-top: 25%;
+  margin-left: 16%;
+}
+
+.btn-position-go {
+  margin-top: 10%;
+  margin-left: 16%;
 }

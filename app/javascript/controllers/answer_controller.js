@@ -10,10 +10,15 @@ export default class extends Controller {
   }
 
 
+  // triggered when a der/die/das bubble is clicked
+
   checkAnswer(event) {
     const clickedElement = event.currentTarget
     // find the active noun
     const currentNoun = document.querySelector('.active')
+
+    // if the correct answer was chosen
+
 
     if (event.target.innerText == currentNoun.dataset.article) {
       // add the article to the noun bubble
@@ -26,7 +31,13 @@ export default class extends Controller {
         currentNoun.classList.remove('active')
         currentNoun.nextElementSibling.classList.add('active')
       }, 1000);
+
+    // if the incorrect answer was chosen
+
     } else {
+      // update the mastery
+      currentNoun.dataset.mastery="false"
+
       // Add the "shake" class to the clicked element
       clickedElement.classList.add('shake');
 
@@ -44,6 +55,17 @@ export default class extends Controller {
         clickedElement.classList.remove('shake');
       }, 3000);
     }
+    console.log(currentNoun)
+
+  }
+
+  postMasteries() {
+    let masteryString = ""
+    this.answersTarget.children.forEach(word => {
+      if(word.dataset.mastery) {
+        masteryString += word.dataset.id
+      }
+    });
   }
 
 }
