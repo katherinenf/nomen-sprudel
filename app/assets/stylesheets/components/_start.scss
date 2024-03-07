@@ -1,11 +1,11 @@
 .container span {
   display: block;
-  text-transform: uppercase;
-  animation: text 5s infinite;
+  animation: text 5s;
 }
 
-.text {
-  color: #5391C3;;
+.greeting-styling {
+  color: rgba(188, 52, 34, 0.8);
+  text-shadow: 1px -7px 10px #def, 0 0 0 #bd7d7d, 0px 0px 0px #def;
   font-size: 80px;
   font-family: "Mouse Memoirs", sans-serif;
   font-weight: bold;
@@ -25,3 +25,7 @@
   }
 }
 
+.inside {
+  text-align: center;
+  overflow: hidden;
+}
