@@ -50,7 +50,7 @@
 
     <div class="container-show">
 
-            <div data-answer-target="answers">
+      <div data-answer-target="answers">
         <% @words.each do |word|%>
           <button class="round-button d-none"
             data-answer-target='noun'
@@ -62,7 +62,7 @@
 
     <div class="button-show">
       <button class="btn-styling btn-position-play" onclick="togglePopupQuit()">Quit</button>
-      <div id="popup-quit" class="popup-button-show">
+        <div id="popup-quit" class="popup-button-show">
         <span class="close" onclick="togglePopupQuit()">&times;</span>
         <p>Are you sure?</p>
         <button class="btn-styling btn-position-play">Yes</button>
