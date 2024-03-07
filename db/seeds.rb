@@ -20,7 +20,7 @@ Word.create(english: 'tiger', german: 'Tiger', article: 'der', word_set: animals
 Word.create(english: 'zebra', german: 'Zebra', article: 'das', word_set: animals_word_set)
 Word.create(english: 'giraffe', german: 'Giraffe', article: 'die', word_set: animals_word_set)
 Word.create(english: 'monkey', german: 'Affe', article: 'der', word_set: animals_word_set)
-Word.create(english: 'hippopotamus', german: 'Nilpferd', article: 'das', word_set: animals_word_set)
+Word.create(english: 'hippopotamus', german: 'Flusspferd', article: 'das', word_set: animals_word_set)
 Word.create(english: 'kangaroo', german: 'Känguru', article: 'das', word_set: animals_word_set)
 Word.create(english: 'crocodile', german: 'Krokodil', article: 'das', word_set: animals_word_set)
 Word.create(english: 'penguin', german: 'Pinguin', article: 'der', word_set: animals_word_set)
