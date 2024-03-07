@@ -43,3 +43,129 @@ img:hover {
   90% { transform: translate(1px, 2px) rotate(0deg); }
   100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
+
+#background-wrap {
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.bubble {
+  border-radius: 50%;
+  box-shadow: 0 20px 30px rgba(0,0,0,0), inset 0px 10px 30px 5px rgba(255, 255, 255, 1);
+  height: 200px;
+  position: absolute;
+  width: 200px;
+}
+
+.bubble::after {
+  background: -moz-radial-gradient(center, ellipse cover rgba(255,255,255,0.5)0%, rgba(255,255,255,0) 70%);
+  border-radius: 50%;
+  box-shadow: inset 0 20px 30px rgba(255,255,255,0.3);
+  content: "";
+  height: 180px;
+  left: 10px;
+  position: absolute;
+  width: 10px;
+}
+
+.bubble.b1 {
+  animation: animateBubble 25s linear infinite, sideways 2s
+  ease-in-out infinite alternate;
+  left: -5%;
+  top: 5%;
+  transform: scale(0.6);
+}
+
+.bubble.b2 {
+  animation: animateBubble 20s linear infinite, sideways 4s
+  ease-in-out infinite alternate;
+  left: 5%;
+  top: 80%;
+  transform: scale(0.4);
+}
+
+.bubble.b3 {
+  animation: animateBubble 28s linear infinite, sideways 2s
+  ease-in-out infinite alternate;
+  left: 10%;
+  top: 40%;
+  transform: scale(0.7);
+}
+
+.bubble.b4 {
+  animation: animateBubble 22s linear infinite, sideways 3s
+  ease-in-out infinite alternate;
+  left: 20%;
+  top: 0%;
+  transform: scale(0.3);
+}
+
+.bubble.b5 {
+  animation: animateBubble 29s linear infinite, sideways 4s
+  ease-in-out infinite alternate;
+  left: 30%;
+  top: 50%;
+  transform: scale(0.5);
+}
+
+.bubble.b6 {
+  animation: animateBubble 21s linear infinite, sideways 2s
+  ease-in-out infinite alternate;
+  left: 50%;
+  top: 0%;
+  transform: scale(0.8);
+}
+
+.bubble.b7 {
+  animation: animateBubble 25s linear infinite, sideways 2s
+  ease-in-out infinite alternate;
+  left: -5%;
+  top: 5%;
+  transform: scale(0.6);
+}
+
+.bubble.b8 {
+  animation: animateBubble 20s linear infinite, sideways 2s
+  ease-in-out infinite alternate;
+  left: 65%;
+  top: 70%;
+  transform: scale(0.8);
+}
+
+.bubble.b9 {
+  animation: animateBubble 29s linear infinite, sideways 2s
+  ease-in-out infinite alternate;
+  left: 90%;
+  top: 50%;
+  transform: scale(0.6);
+}
+
+.bubble.b10 {
+  animation: animateBubble 26s linear infinite, sideways 2s
+  ease-in-out infinite alternate;
+  left: 80%;
+  top: 80%;
+  transform: scale(0.3);
+}
+
+@keyframes animateBubble {
+  0% {
+    margin-top: 1000px;
+  }
+  100% {
+    margin-top: -100px;
+  }
+}
+
+@keyframes sideways {
+  0% {
+    margin-left: 0px;
+  }
+  100% {
+    margin-left: 50px;
+  }
+}
