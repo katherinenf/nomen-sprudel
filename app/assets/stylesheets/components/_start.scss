@@ -1,12 +1,12 @@
 .container span {
   display: block;
-  text-transform: uppercase;
-  animation: text 5s infinite;
+  animation: text 5s;
 }
 
-.text {
-  color: #5391C3;;
-  font-size: 100px;
+.greeting-styling {
+  color: rgba(188, 52, 34, 0.8);
+  text-shadow: 1px -7px 10px #def, 0 0 0 #bd7d7d, 0px 0px 0px #def;
+  font-size: 80px;
   font-family: "Mouse Memoirs", sans-serif;
   font-weight: bold;
   margin-bottom: 60px;
@@ -42,4 +42,9 @@ img:hover {
   80% { transform: translate(-1px, -1px) rotate(1deg); }
   90% { transform: translate(1px, 2px) rotate(0deg); }
   100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+.inside {
+  text-align: center;
+  overflow: hidden;
 }
