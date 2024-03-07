@@ -1,18 +1,36 @@
 body html{
-margin: auto;
-padding-top: 20px;
-
+  margin: auto;
+  padding-top: 20px;
 }
 
 .container-show {
+  padding: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+.info-button {
+  margin: 20px;
+  position: right;
+  bottom: 80px;
+  right: 80px;
+  border: 4px solid rgb(49, 102, 201);
+  border-radius: 50%;
+  background-color: #5391C3;
+  color: rgb(66, 64, 64);
+  text-align: center;
+  height: 60px;
+  width: 60px;
+  font-weight: bold;
+  font-family: "Mouse Memoirs", sans-serif;
+  letter-spacing: 3px;
+  font-size: 28px;
+  padding: 5px 5px;
+  text-decoration: none;
+  box-shadow: 10px 10px 10px rgba(2, 2, 0, 0.1);
+}
 .round-button {
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
   border: 7px solid rgb(49, 102, 201);
   border-radius: 50%;
   background-color: #5391C3;
@@ -22,13 +40,60 @@ padding-top: 20px;
   font-family: "Mouse Memoirs", sans-serif;
   letter-spacing: 3px;
   font-size: 45px;
-  padding: 90px 80px;
+  padding: 60px 60px;
   text-decoration: none;
   box-shadow: 10px 10px 10px rgba(2, 2, 0, 0.1);
 }
 
 .round-button:hover {
   background-color: #c1bfe1;
+}
+
+.flexbox {
+  display: flex;
+  padding: 19px;
+  margin-top: 80px;
+  justify-content: space-between;
+}
+
+.container-background-image {
+  position: relative;
+  flex: 1;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 120px;
+  height: 170px;
+  object-fit: cover;
+  z-index: -1;
+}
+
+
+.text-container-background-image {
+  position: relative;
+  top: 55%;
+  left: 30%;
+  z-index: 1;
+}
+
+.text-container-background-image p {
+  margin-top: 29px;
+  font-size: 33px;
+  font-family: "Mouse Memoirs", sans-serif;
+  letter-spacing: 5px;
+  font-weight: bolder;
+  color: #5391C3;
+  background-clip: text;
+}
+
+.button-show {
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @keyframes shake {

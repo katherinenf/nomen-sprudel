@@ -9,12 +9,15 @@ export default class extends Controller {
     this.nounTarget.classList.add('active')
   }
 
+
   // triggered when a der/die/das bubble is clicked
+
   checkAnswer(event) {
     const clickedElement = event.currentTarget
     const currentNoun = document.querySelector('.active')
 
-    // if choice is correct
+    // if the correct answer was chosen
+
     if (event.target.innerText == currentNoun.dataset.article) {
       // add the article to the noun bubble
       currentNoun.innerHTML = `<p>${currentNoun.dataset.article}</p>
@@ -27,7 +30,8 @@ export default class extends Controller {
         currentNoun.nextElementSibling.classList.add('active')
       }, 1000);
 
-    // if choice is incorrect
+    // if the incorrect answer was chosen
+
     } else {
       // update the mastery
       currentNoun.dataset.mastery="false"
