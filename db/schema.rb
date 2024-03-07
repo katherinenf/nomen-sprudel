@@ -10,9 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_04_134459) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_07_143318) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "masteries", force: :cascade do |t|
+    t.boolean "mastered"
+    t.bigint "user_id", null: false
+    t.bigint "word_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_masteries_on_user_id"
+    t.index ["word_id"], name: "index_masteries_on_word_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -43,5 +53,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_04_134459) do
     t.index ["word_set_id"], name: "index_words_on_word_set_id"
   end
 
+  add_foreign_key "masteries", "users"
+  add_foreign_key "masteries", "words"
   add_foreign_key "words", "word_sets"
 end
