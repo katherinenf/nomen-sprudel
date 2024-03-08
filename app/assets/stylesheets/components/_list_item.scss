@@ -3,13 +3,12 @@
 // }
 
 .inside-list {
-  background-color: white;
   max-width: 90%;
   border-radius: 5px;
 }
 .list-item {
 display: flex;
-justify-content: center;
+justify-content: space-between;
 align-items: center;
 border : 2px solid grey;
 margin: 2px;
