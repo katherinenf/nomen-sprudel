@@ -1,6 +1,7 @@
 
 </html>
  <body data-controller="answer">
+  <div data-controller="win">
     <div class="container-info-button" data-action="click->answer#popupInfo">
       <div class="info-button" >i</div>
       <div data-answer-target="info" id="info" class="popup-info-button">
@@ -37,7 +38,7 @@
     <div data-answer-target="overlay" class="overlay"></div>
 
     <div class="container-show">
-      <div class="answers" data-answer-target="answers">
+      <div class="answers" data-answer-target="answers" data-win-target="words">
         <% @words.each do |word|%>
           <button class='round-button d-none'
                   data-action='click->answer#showEnglish'
@@ -51,9 +52,10 @@
           </button>
         <% end %>
       </div>
+    </div>
 
-      <div class="button-show">
-        <button class="btn-styling btn-position-play" data-action="click->answer#popupQuit">Quit</button>
+    <div class="button-show">
+      <button class="btn-styling btn-position-play" data-action="click->answer#popupQuit">Quit</button>
         <div id="popup-quit" class="popup-button-show" data-answer-target="quit">
           <span class="close" data-action="click->answer#popupQuit">&times;</span>
           <p>Are you sure?</p>
@@ -61,6 +63,15 @@
         </div>
       </div>
 
+    <div class="button-show">
+      <div class="popup-button" >
+          <p>You win!</p>
+          <%= button_to "save", home_path , method: :get, class: "btn-styling btn-position-play",
+          data: {
+            action: "click->win#updateMasteries"
+          }%>
+      </div>
+      </div>
     </div>
   </body>
 </html>
