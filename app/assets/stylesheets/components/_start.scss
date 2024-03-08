@@ -1,13 +1,13 @@
 .container span {
   display: block;
-  animation: text 5s;
+  animation: text 3s;
 }
 
 .greeting-styling {
-  color: rgba(188, 52, 34, 0.8);
-  text-shadow: 1px -7px 10px #def, 0 0 0 #bd7d7d, 0px 0px 0px #def;
+  color: #FF6969;
+  // text-shadow: 1px -7px 10px #def, 0 0 0 #bd7d7d, 0px 0px 0px #def;
   font-size: 80px;
-  font-family: "Mouse Memoirs", sans-serif;
+  font-family:"Dancing Script", cursive;
   font-weight: bold;
   margin-bottom: 60px;
 }
@@ -26,7 +26,7 @@
 }
 
 img:hover {
-  animation: shake 0.5s;
+  animation: shake 1s;
   animation-iteration-count: infinite;
 }
 
