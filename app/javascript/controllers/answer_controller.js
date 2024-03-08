@@ -14,6 +14,10 @@ export default class extends Controller {
     this.overlayTarget.classList.toggle("show");
   }
 
+  showEnglish() {
+    this.englishTarget.classList.toggle("show")
+  }
+
   // triggered when a der/die/das bubble is clicked
   checkAnswer(event) {
     const clickedElement = event.currentTarget
@@ -29,7 +33,9 @@ export default class extends Controller {
       // pause so the player can see the combination
       if (currentNoun.nextElementSibling == null) {
         this.popupQuit()
+
       } else {
+
       setTimeout(() => {
         // switch the active element
         currentNoun.classList.remove('active')
