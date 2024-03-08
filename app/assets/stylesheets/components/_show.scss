@@ -4,7 +4,8 @@ body html{
 }
 
 .container-show {
-  padding: 150px;
+  margin-top: 120px;
+  padding: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -52,14 +53,14 @@ body html{
 
 .flexbox {
   display: flex;
-  padding: 19px;
-  margin-top: 80px;
+  margin-top: 5px;
   justify-content: space-between;
 }
 
 .container-background-image {
   position: relative;
   flex: 1;
+  margin-top: 5%;
 }
 
 .background-image {
@@ -71,7 +72,6 @@ body html{
   object-fit: cover;
   z-index: -1;
 }
-
 
 .text-container-background-image {
   position: relative;
@@ -91,7 +91,6 @@ body html{
 }
 
 .button-show {
-  padding: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
