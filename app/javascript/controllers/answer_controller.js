@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="answer"
 export default class extends Controller {
-  static targets = ['article', 'noun', 'answers', 'info', 'quit', 'win', 'overlay']
+  static targets = ['article', 'noun', 'answers', 'info', 'quit', 'win', 'overlay', 'english']
 
   connect() {
     // set the first word as visible
@@ -12,6 +12,10 @@ export default class extends Controller {
   popupQuit() {
     this.quitTarget.classList.toggle("show");
     this.overlayTarget.classList.toggle("show");
+  }
+
+  showEnglish() {
+    this.englishTarget.classList.toggle("d-none")
   }
 
   // triggered when a der/die/das bubble is clicked
@@ -29,7 +33,9 @@ export default class extends Controller {
       // pause so the player can see the combination
       if (currentNoun.nextElementSibling == null) {
         this.popupQuit()
+
       } else {
+
       setTimeout(() => {
         // switch the active element
         currentNoun.classList.remove('active')
