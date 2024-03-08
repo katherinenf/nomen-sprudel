@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="answer"
 export default class extends Controller {
-  static targets = ['article', 'noun', 'answers', 'info', 'quit', 'win', 'overlay']
+  static targets = ['article', 'noun', 'answers', 'info', 'quit', 'win', 'overlay', 'english']
 
   connect() {
     // set the first word as visible
@@ -15,7 +15,7 @@ export default class extends Controller {
   }
 
   showEnglish() {
-    this.englishTarget.classList.toggle("show")
+    this.englishTarget.classList.toggle("d-none")
   }
 
   // triggered when a der/die/das bubble is clicked

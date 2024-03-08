@@ -39,13 +39,15 @@
     <div class="container-show">
       <div class="answers" data-answer-target="answers">
         <% @words.each do |word|%>
-          <button class='round-button d-none' data-answer-target='noun'
+          <button class='round-button d-none'
+                  data-action='click->answer#showEnglish'
+                  data-answer-target='noun'
                   data-english=<%= word.english%>
                   data-article=<%= word.article %>
                   data-mastery='true'
                   data-id=<%= word.id%>>
             <%= word.german %>
-            <p class="d-none" data-answer-target='english'><%= word.english %></p>
+            <p class="d-none" data-answer-target='english'> (<%= word.english %>)</p>
           </button>
         <% end %>
       </div>
