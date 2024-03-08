@@ -1,14 +1,15 @@
 .btn-styling {
-  background: linear-gradient(45deg,#e4ac88, #EA9D6D, #e4ac88);
+  background: #Ea9d6D; // linear-gradient(45deg, #fae2cd, #FFD3B0, #fae2cd);
   padding: 15px;
   height: 70px;
   width: 300px;
 
-  border: 5px solid #5391c3;
-  border-radius: 30px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-              rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
-              rgba(10, 37, 64, 0.35) 0px -2px 10px 0px inset;
+  // border: 5px solid #5391c3;
+  border-radius: 10px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  // box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+              //rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+              //rgba(10, 37, 64, 0.35) 0px -2px 10px 0px inset;
 
   text-decoration: none;
   color: white;
@@ -29,7 +30,7 @@
 }
 
 .btn-position-log-in {
-  margin-top: 25%;
+  margin-top: 10%;
   margin-bottom: 25%;
 }
 
@@ -37,6 +38,6 @@
   // margin-top: 10%;
   // margin-bottom: 25%;
   // margin-left: 20%;
-  
+
   margin: 10% 10%;
 }
