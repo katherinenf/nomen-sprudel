@@ -63,7 +63,7 @@
         </div>
       </div>
 
-    <div class="button-show">
+    <div class="button-show d-none">
       <div class="popup-button" >
           <p>You win!</p>
           <%= button_to "save", home_path , method: :get, class: "btn-styling btn-position-play",
@@ -71,6 +71,14 @@
             action: "click->win#updateMasteries"
           }%>
       </div>
+      </div>
+
+      <div class="win-show">
+        <div id="popup-win" class="popup-win-show" data-answer-target="win">
+          <span class="close" data-action="click->answer#popupWin">&times;</span>
+          <p>Congratulations, you mastered this set🤟🏼!</p>
+          <%= button_to "Go to homepage", home_path , method: :get, class: "btn-styling btn-position-play"%>
+        </div>
       </div>
     </div>
   </body>
