@@ -1,24 +1,15 @@
 
 </html>
  <body data-controller="answer">
-    <div class="container-info-button">
-      <div class="info-button" onclick="togglePopupInfoButton()">i</div>
-      <div id="popup-info-button" class="popup-info-button">
-        <span class="close" onclick="togglePopupInfoButton()">&times;</span>
+    <div class="container-info-button" data-action="click->answer#popupInfo">
+      <div class="info-button" >i</div>
+      <div data-answer-target="info" id="info" class="popup-info-button">
+        <span class="close" >&times;</span>
         <h2>Tutorial</h2>
         <p>When a Noun pops up on the big blue button, you can choose the class by clicking on one of the bubbles.
         If your choice is wrong, the bubble will shake no. If you pick the right class you go on to the next noun challenge. Happy Sprudeling☀️</p>
     </div>
   </div>
-
-  <script>
-    function togglePopupInfoButton() {
-      var popup = document.getElementById("popup-info-button");
-      var overlay = document.querySelector(".overlay");
-      popup.classList.toggle("show");
-      overlay.classList.toggle("show");
-    }
-  </script>
 
     <div class="flexbox">
       <div class="container-background-image" data-answer-target="article" data-action="click->answer#checkAnswer">
@@ -28,15 +19,12 @@
           </div>
         </div>
 
-
-
       <div class="container-background-image" data-answer-target="article" data-action="click->answer#checkAnswer">
           <img src="https://www.freeiconspng.com/uploads/bubble-transparent-hd-png-27.png" alt="Background Image" class="background-image">
           <div class="text-container-background-image">
             <p>die</p>
           </div>
         </div>
-
 
       <div class="container-background-image" data-answer-target="article" data-action="click->answer#checkAnswer">
           <img src="https://www.freeiconspng.com/uploads/bubble-transparent-hd-png-27.png" alt="Background Image" class="background-image">
@@ -46,10 +34,10 @@
         </div>
     </div>
 
-    <div class="overlay"></div>
+    <div data-answer-target="overlay" class="overlay"></div>
 
     <div class="container-show">
-      <div data-answer-target="answers">
+      <div class="answers" data-answer-target="answers">
         <% @words.each do |word|%>
           <button class="round-button d-none" data-answer-target='noun'
                   data-english=<%= word.english%>
@@ -59,26 +47,17 @@
             <%= word.german %>
           </button>
         <% end %>
+      </div>
 
       <div class="button-show">
-        <button class="btn-styling btn-position-play" onclick="togglePopupQuit()">Quit</button>
-        <div id="popup-quit" class="popup-button-show">
-          <span class="close" onclick="togglePopupQuit()">&times;</span>
+        <button class="btn-styling btn-position-play" data-action="click->answer#popupQuit">Quit</button>
+        <div id="popup-quit" class="popup-button-show" data-answer-target="quit">
+          <span class="close" data-action="click->answer#popupQuit">&times;</span>
           <p>Are you sure?</p>
-          <button class="btn-styling btn-position-play">Yes</button>
+          <%= button_to "yes", home_path , method: :get, class: "btn-styling btn-position-play"%>
         </div>
       </div>
 
-    <script>
-      function togglePopupQuit() {
-        var popup = document.getElementById("popup-quit");
-        var overlay = document.querySelector(".overlay");
-        popup.classList.toggle("show");
-        overlay.classList.toggle("show");
-      }
-    </script>
-
-      <div class="overlay"></div>
     </div>
   </body>
 </html>

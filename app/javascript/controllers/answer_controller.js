@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="answer"
 export default class extends Controller {
-  static targets = ['article', 'noun', 'answers']
+  static targets = ['article', 'noun', 'answers', 'info', 'quit', 'win', 'overlay']
 
   connect() {
     // set the first word as visible
@@ -42,7 +42,7 @@ export default class extends Controller {
       clickedElement.classList.add('shake');
 
       //check if this word is already the last in the list
-      if (this.answersTarget.lastElementChild.dataset.english != currentNoun.dataset.english) {
+      if (this.answersTarget.lastElementChild.dataset.id != currentNoun.dataset.id) {
 
       // Add the word to the end of the list
       this.answersTarget.insertAdjacentHTML('beforeend',
@@ -61,7 +61,17 @@ export default class extends Controller {
       }, 3000);
     }
     console.log(currentNoun)
+  }
 
+    popupInfo() {
+    console.log("hi")
+    this.infoTarget.classList.toggle("show");
+    this.overlayTarget.classList.toggle("show");
+  }
+
+    popupQuit() {
+    this.quitTarget.classList.toggle("show");
+    this.overlayTarget.classList.toggle("show");
   }
 
   postMasteries() {
