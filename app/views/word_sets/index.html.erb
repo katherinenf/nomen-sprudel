@@ -10,9 +10,11 @@
               selection_target: "dropdown"
               }
             } %>
-    <%= f.button :submit, "GO!", class: "btn-styling btn-position-go" %>
+    <%= f.button :submit, "GO!", class: "btn-styling btn-position-go d-none",
+        data: {
+        selection_target: "button"
+        } %>
   <% end %>
-  
-  <div data-selection-target="list">
-  </div>
+
+  <div data-selection-target="list"></div>
 </div>
