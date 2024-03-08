@@ -9,31 +9,35 @@ export default class extends Controller {
     this.nounTarget.classList.add('active')
   }
 
+  popupQuit() {
+    this.quitTarget.classList.toggle("show");
+    this.overlayTarget.classList.toggle("show");
+  }
 
   // triggered when a der/die/das bubble is clicked
-
   checkAnswer(event) {
     const clickedElement = event.currentTarget
     // find the active noun
     const currentNoun = document.querySelector('.active')
 
     // if the correct answer was chosen
-
-
     if (event.target.innerText == currentNoun.dataset.article) {
       // add the article to the noun bubble
       currentNoun.innerHTML = `<p>${currentNoun.dataset.article}</p>
                                <p>${currentNoun.innerText}</p>`
 
       // pause so the player can see the combination
+      if (currentNoun.nextElementSibling == null) {
+        this.popupQuit()
+      } else {
       setTimeout(() => {
         // switch the active element
         currentNoun.classList.remove('active')
         currentNoun.nextElementSibling.classList.add('active')
-      }, 1000);
+        }, 1000);
+      }
 
     // if the incorrect answer was chosen
-
     } else {
       // update the mastery
       currentNoun.dataset.mastery="false"
@@ -60,7 +64,6 @@ export default class extends Controller {
         clickedElement.classList.remove('shake');
       }, 3000);
     }
-    console.log(currentNoun)
   }
 
     popupInfo() {
@@ -69,10 +72,6 @@ export default class extends Controller {
     this.overlayTarget.classList.toggle("show");
   }
 
-    popupQuit() {
-    this.quitTarget.classList.toggle("show");
-    this.overlayTarget.classList.toggle("show");
-  }
 
   postMasteries() {
     let masteryString = ""
