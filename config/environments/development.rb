@@ -18,6 +18,7 @@ Rails.application.configure do
   # Enable server timing
   config.server_timing = true
 
+  config.hosts.clear
   # This is for ngrok to work
   config.hosts << /[a-z0-9-.]+\.ngrok\.io/
 
