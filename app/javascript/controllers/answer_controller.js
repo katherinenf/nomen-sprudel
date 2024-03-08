@@ -7,11 +7,15 @@ export default class extends Controller {
   connect() {
     // set the first word as visible
     this.nounTarget.classList.add('active')
-    console.log("hihi")
   }
 
   popupQuit() {
     this.quitTarget.classList.toggle("show");
+    this.overlayTarget.classList.toggle("show");
+  }
+
+  popupWin() {
+    this.winTarget.classList.toggle("show");
     this.overlayTarget.classList.toggle("show");
   }
 
@@ -33,7 +37,7 @@ export default class extends Controller {
 
       // pause so the player can see the combination
       if (currentNoun.nextElementSibling == null) {
-        this.popupQuit()
+        this.popupWin()
 
       } else {
 
@@ -74,7 +78,6 @@ export default class extends Controller {
   }
 
     popupInfo() {
-    console.log("hi")
     this.infoTarget.classList.toggle("show");
     this.overlayTarget.classList.toggle("show");
   }
