@@ -10,7 +10,9 @@
 
         <%= button_to "play", "#" , method: :get, class: "btn-styling btn-position-play"%>
 
-        <%= button_to "log in", "#" , method: :get, class: "btn-styling btn-position-log-in"%>
+        <%= button_to "log in", user_session_path , method: :get, class: "btn-styling btn-position-log-in"%>
+
+        <%= button_to "log out", destroy_user_session_path,  :method => :delete, class: "btn-styling"%>
 
       </div>
     </div>
