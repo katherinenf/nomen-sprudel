@@ -1,3 +1,12 @@
+// .inside-list {
+//   background-color: white;
+// }
+
+.inside-list {
+  background-color: white;
+  max-width: 90%;
+  border-radius: 5px;
+}
 .list-item {
 display: flex;
 justify-content: center;
@@ -6,20 +15,25 @@ border : 2px solid grey;
 margin: 2px;
 padding: 10px;
 font-family: "Mouse Memoirs", sans-serif;
+color: #5A5353;
 border-radius: 5px;
 font-size: 20px;
 letter-spacing: 3px;
 }
 
+
+
 .list-box {
   overflow: scroll;
-  width: 350px;
+  width: 80%;
   height: 200px;
   margin: 5px;
 }
 
 .list-header {
   font-family: "Mouse Memoirs", sans-serif;
+  color: #5A5353;
+  text-align: center;
   font-size: 24px;
   letter-spacing: 3px;
   margin: 7px;
