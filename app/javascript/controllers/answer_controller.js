@@ -9,6 +9,11 @@ export default class extends Controller {
     this.nounTarget.classList.add('active')
   }
 
+  popupWin() {
+    this.winTarget.classList.toggle("show");
+    this.overlayTarget.classList.toggle("show");
+  }
+
   popupQuit() {
     this.quitTarget.classList.toggle("show");
     this.overlayTarget.classList.toggle("show");
@@ -38,7 +43,6 @@ export default class extends Controller {
       // pause so the player can see the combination
       if (currentNoun.nextElementSibling == null) {
         this.popupWin()
-
       } else {
 
       setTimeout(() => {

@@ -61,13 +61,32 @@
       </div>
     </div>
 
-  <div class="button-show d-none">
-    <div class="popup-button" >
-        <p>You win!</p>
-        <%= button_to "save", home_path , method: :get, class: "btn-styling btn-position-play",
-        data: {
-          action: "click->win#updateMasteries"
-        }%>
+    <div class="button-show">
+      <button class="btn-styling btn-position-play" data-action="click->answer#popupQuit">Quit</button>
+        <div id="popup-quit" class="popup-button-show" data-answer-target="quit">
+          <span class="close" data-action="click->answer#popupQuit">&times;</span>
+          <p>Are you sure?</p>
+          <%= button_to "yes", home_path , method: :get, class: "btn-styling btn-position-play"%>
+        </div>
+      </div>
+
+    <div class="button-show d-none">
+      <div class="popup-button" >
+          <p>You win!</p>
+          <%= button_to "save", home_path , method: :get, class: "btn-styling btn-position-play",
+          data: {
+            action: "click->win#updateMasteries"
+          }%>
+      </div>
+    </div>
+
+      <div class="win-show">
+        <div id="popup-win" class="popup-win-show" data-answer-target="win">
+          <span class="close" data-action="click->answer#popupWin">&times;</span>
+          <p>Congratulations, you mastered this set🤟🏼!</p>
+          <%= button_to "Go to homepage", home_path , method: :get, class: "btn-styling btn-position-play"%>
+        </div>
+      </div>
     </div>
   </div>
   </div>

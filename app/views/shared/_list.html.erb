@@ -1,13 +1,22 @@
-  <h2 class="list-header"> Words in this list </h2>
-<div class="list-box" data-selection-target="list">
-  <% @words = @set.words %>
-  <% @words.each do |word|%>
-    <div class="list-item"><%= word.article %> <%= word.german %>
-      <div>
-        <i class="fa-solid fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
+<div class="container inside-list">
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-6">
+
+      <div class="inside">
+        <h2 class="list-header"> Words in this list </h2>
+          <div class="list-box" data-selection-target="list">
+            <% @words = @set.words %>
+            <% @words.each do |word|%>
+            <div class="list-item"><%= word.article %> <%= word.german %>
+              <div>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+              </div>
+            </div>
+            <% end %>
+        </div>
       </div>
     </div>
-  <% end %>
+  </div>
 </div>

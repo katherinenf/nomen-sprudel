@@ -1,8 +1,18 @@
 .main-logo-styling {
   width: 300px;
-  margin-top: 20px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  background-color: white;
+  border-radius: 150px;
 }
 
 .second-logo-styling {
   width: 150px;
+}
+
+.main-logo-position {
+  margin-top: 40%;
+}
+
+.logo-position {
+  margin-top:30px;
 }
