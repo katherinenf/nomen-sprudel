@@ -41,16 +41,16 @@ export default class extends Controller {
                                <p>${currentNoun.innerText}</p>`
 
       // pause so the player can see the combination
-      if (currentNoun.nextElementSibling == null) {
-        this.popupWin()
-      } else {
-
       setTimeout(() => {
         // switch the active element
         currentNoun.classList.remove('active')
-        currentNoun.nextElementSibling.classList.add('active')
-        }, 1000);
-      }
+        // check if this is the last item in the set
+        if (currentNoun.nextElementSibling == null) {
+          this.popupWin()
+        } else {
+          currentNoun.nextElementSibling.classList.add('active')
+        }
+      }, 1000);
 
     // if the incorrect answer was chosen
     } else {
