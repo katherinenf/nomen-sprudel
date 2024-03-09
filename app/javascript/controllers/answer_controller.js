@@ -19,11 +19,6 @@ export default class extends Controller {
     this.overlayTarget.classList.toggle("show");
   }
 
-  popupWin() {
-    this.winTarget.classList.toggle("show");
-    this.overlayTarget.classList.toggle("show");
-  }
-
   showEnglish() {
     this.englishTarget.classList.toggle("d-none")
   }
@@ -81,11 +76,10 @@ export default class extends Controller {
     }
   }
 
-    popupInfo() {
+  popupInfo() {
     this.infoTarget.classList.toggle("show");
     this.overlayTarget.classList.toggle("show");
   }
-
 
   postMasteries() {
     let masteryString = ""

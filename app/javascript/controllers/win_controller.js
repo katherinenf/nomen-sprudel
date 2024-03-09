@@ -10,19 +10,22 @@ export default class extends Controller {
   updateMasteries(event) {
     event.preventDefault()
     let updateIDs = ""
+    // make a string of all the ids for which mastered is "true"
     this.wordTargets.forEach(word => {
       if (word.dataset.mastery === "true")
       {updateIDs += `${word.dataset.id} `}
     });
-    console.log(updateIDs)
-    fetch(this.winTarget.action, {
+    console.log(JSON.stringify({updateIDs}))
+    
+    // everything above this comment works
+    fetch('/update_many', {
       method: "POST",
       headers: { "Accept": "application/json" },
-      body: updateIDs
+      body: JSON.stringify(updateIDs)
     })
-      .then(response => response.json())
-      .then((data) => {
-        console.log(data)
-      })
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+    })
   }
 }
