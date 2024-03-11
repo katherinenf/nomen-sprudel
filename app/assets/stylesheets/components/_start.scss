@@ -77,9 +77,21 @@ img:hover {
   width: 10px;
 }
 
+.bubble-text {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  font-size: 33px;
+  font-family: "Mouse Memoirs", sans-serif;
+  letter-spacing: 5px;
+  font-weight: bolder;
+}
+
 .bubble.b1 {
   animation: animateBubble 15s linear infinite, sideways 2s
   ease-in-out infinite alternate;
+  position: relative;
   left: -5%;
   top: 5%;
   transform: scale(0.6);
