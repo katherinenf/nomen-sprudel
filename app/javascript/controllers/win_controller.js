@@ -16,16 +16,12 @@ export default class extends Controller {
       {updateIDs += `${word.dataset.id} `}
     });
     console.log(JSON.stringify({updateIDs}))
-    
+
     // everything above this comment works
-    fetch('/update_many', {
+    fetch('/masteries', {
       method: "POST",
-      headers: { "Accept": "application/json" },
-      body: JSON.stringify(updateIDs)
-    })
-    .then(response => response.json())
-    .then(data => {
-      console.log(data);
+      headers: { "Accept": "text/plain" },
+      body: updateIDs
     })
   }
 }
