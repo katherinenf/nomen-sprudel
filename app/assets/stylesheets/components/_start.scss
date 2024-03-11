@@ -86,7 +86,9 @@ img:hover {
   font-family: "Mouse Memoirs", sans-serif;
   letter-spacing: 5px;
   font-weight: bolder;
+  z-index: -1;
 }
+
 
 .bubble.b1 {
   animation: animateBubble 15s linear infinite, sideways 2s
@@ -162,7 +164,7 @@ img:hover {
 }
 
 .bubble.b10 {
-  animation: animateBubble 3s linear infinite, sideways 2s
+  animation: animateBubble 8s linear infinite, sideways 2s
   ease-in-out infinite alternate;
   left: 80%;
   top: 80%;

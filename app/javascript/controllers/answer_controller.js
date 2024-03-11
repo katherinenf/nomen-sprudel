@@ -29,7 +29,6 @@ export default class extends Controller {
     const clickedElement = event.currentTarget
     // find the active noun
     const currentNoun = document.querySelector('.active')
-
     // if the correct answer was chosen
     if (event.target.innerText == currentNoun.dataset.article) {
       // add the article to the noun bubble
@@ -46,6 +45,7 @@ export default class extends Controller {
         currentNoun.classList.remove('active')
         currentNoun.nextElementSibling.classList.add('active')
         }, 1000);
+        this.triggerSecondControllerMethod()
       }
 
     // if the incorrect answer was chosen
@@ -93,4 +93,11 @@ export default class extends Controller {
     });
   }
 
+  triggerSecondControllerMethod() {
+    const element = document.querySelector('[data-controller="bubble"]');
+    const secondController = this.application.getControllerforElementAndIdentifier(element, "bubble")
+    if (secondController) {
+      secondController.addBubble()
+    }
+  }
 }
