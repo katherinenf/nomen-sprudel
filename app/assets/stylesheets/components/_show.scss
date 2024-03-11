@@ -120,6 +120,70 @@ body html{
   animation: shake 1s ease-in-out;
 }
 
+
+.toggle {
+  visibility: hidden;
+}
+
+.label {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  margin: 20px;
+  background-color: pink;
+  width: 80px;
+  height: 40px;
+  border-radius: 50px;
+  cursor: pointer;
+  display: inline-block;
+  z-index: 999;
+
+}
+
+.toggle:checked + .label {
+  background-color: black;
+}
+
+.ball {
+  background-color: white;
+  width: 37px;
+  height: 37px;
+  border-radius: 50px;
+  position: absolute;
+  top: 1.5px;
+  left: 1.5px;
+  animation: slideOff 0.3s linear forwards;
+  z-index: 9999;
+}
+
+.toggle:checked + .label .ball {
+  animation: slideOn 0.3s linear forwards;
+}
+
+@keyframes slideOn {
+  0%{
+    transform: translateX(0px) scale(1);
+  }
+  50% {
+    transform: translateX(20px) scale(1.2);
+  }
+  100% {
+    transform: translateX(40px) scale(1);
+  }
+}
+
+@keyframes slideOff {
+  0%{
+    transform: translateX(40px) scale(1);
+  }
+  50% {
+    transform: translateX(20px) scale(1.2);
+  }
+  100% {
+    transform: translateX(0px) scale(1);
+  }
+}
+
 .wrong {
   background-color: rgb(237, 89, 89)!important;
 }
@@ -128,3 +192,4 @@ body html{
   background-color: #8EC3AE!important;
 
 }
+
