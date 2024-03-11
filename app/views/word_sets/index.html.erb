@@ -10,11 +10,13 @@
               selection_target: "dropdown"
               }
             } %>
+    <div data-selection-target="list"></div>
     <%= f.button :submit, "GO!", class: "btn-styling btn-position-go d-none",
         data: {
         selection_target: "button"
         } %>
   <% end %>
+  <%= button_to "create set", "#", method: :get, class: "btn-styling btn-position-create-set"%>
+  <%= button_to "delete set", "#", method: :get, class: "btn-styling btn-position-delete-set"%>
 
-  <div data-selection-target="list"></div>
 </div>
