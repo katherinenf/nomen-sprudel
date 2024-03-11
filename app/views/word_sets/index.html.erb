@@ -25,9 +25,7 @@
 <div class="container p-4">
 <h2> Create a new set: </h2>
   <%= simple_form_for "word_set" do |f| %>
-    <%= f.input :english, label: 'add word in english:' %>
-    <%= f.input :german, label:'add a german word' %>
-    <%= f.input :article, label:'add the right article' %>
+    <%= f.input :english, label: 'add a sets topic' %>
     <%= f.button :submit, "add words to set", class: "btn-styling" %>
   <% end %>
 </div>
