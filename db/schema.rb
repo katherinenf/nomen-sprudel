@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_08_134705) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_11_104335) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -71,19 +71,21 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_08_134705) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "word_sets_words", id: false, force: :cascade do |t|
+    t.bigint "word_set_id", null: false
+    t.bigint "word_id", null: false
+  end
+
   create_table "words", force: :cascade do |t|
     t.string "english"
     t.string "german"
     t.string "article"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "word_set_id"
-    t.index ["word_set_id"], name: "index_words_on_word_set_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "masteries", "users"
   add_foreign_key "masteries", "words"
-  add_foreign_key "words", "word_sets"
 end
