@@ -35,17 +35,29 @@ export default class extends Controller {
       currentNoun.innerHTML = `<p>${currentNoun.dataset.article}</p>
                                <p>${currentNoun.innerText}</p>`
 
+
+      this.nounTargets.forEach(target => {
+        console.log(target);
+        target.classList.add("right")
+      });
+
       // pause so the player can see the combination
       if (currentNoun.nextElementSibling == null) {
         this.popupWin()
       } else {
-
       setTimeout(() => {
         // switch the active element
+        this.nounTargets.forEach(target => {
+          target.classList.remove("right")
+        });
         currentNoun.classList.remove('active')
         currentNoun.nextElementSibling.classList.add('active')
-        }, 1000);
-        this.triggerSecondControllerMethod()
+
+        }, 1500);
+       
+      }, 1000);
+      this.triggerSecondControllerMethod()
+
       }
 
     // if the incorrect answer was chosen
@@ -56,24 +68,31 @@ export default class extends Controller {
       // Add the "shake" class to the clicked element
       clickedElement.classList.add('shake');
 
+      this.nounTargets.forEach(target => {
+        target.classList.add("wrong")
+      });
+
       //check if this word is already the last in the list
       if (this.answersTarget.lastElementChild.dataset.id != currentNoun.dataset.id) {
 
       // Add the word to the end of the list
       this.answersTarget.insertAdjacentHTML('beforeend',
       `<button class="round-button d-none"
-        data-answer-target='noun'
-        data-english=${currentNoun.dataset.english}
-        data-article=${currentNoun.dataset.article}
-        data-mastery='false'
-        data-id=${currentNoun.dataset.id}>
-          ${currentNoun.innerText}
-          </button>`)
-      }
-      // Remove the "shake" class after the animation duration (adjust as needed)
-      setTimeout(() => {
-        clickedElement.classList.remove('shake');
-      }, 3000);
+      data-answer-target='noun'
+      data-english=${currentNoun.dataset.english}
+      data-article=${currentNoun.dataset.article}
+      data-mastery='false'
+      data-id=${currentNoun.dataset.id}>
+      ${currentNoun.innerText}
+      </button>`)
+    }
+    // Remove the "shake" class after the animation duration (adjust as needed)
+    setTimeout(() => {
+      this.nounTargets.forEach(target => {
+        target.classList.remove("wrong")
+      });
+      clickedElement.classList.remove('shake');
+      }, 1500);
     }
   }
 

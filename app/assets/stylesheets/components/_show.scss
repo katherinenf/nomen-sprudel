@@ -47,9 +47,6 @@ body html{
   box-shadow: 10px 10px 10px rgba(2, 2, 0, 0.1);
 }
 
-.round-button:hover {
-  background-color: #8EC3AE;
-}
 
 .flexbox {
   display: flex;
@@ -63,6 +60,9 @@ body html{
   margin-top: 5%;
 }
 
+.data-action {
+  background-color: #8EC3AE;
+}
 .background-image {
   position: absolute;
   top: 0;
@@ -75,14 +75,16 @@ body html{
 
 .text-container-background-image {
   position: relative;
+  width: min-content;
   top: 55%;
   left: 30%;
   z-index: 1;
 }
 
 .text-container-background-image p {
-  margin-top: 29px;
+  margin: 29px 0px 18px;
   font-size: 33px;
+  width: fit-content;
   font-family: "Mouse Memoirs", sans-serif;
   letter-spacing: 5px;
   font-weight: bolder;
@@ -117,6 +119,7 @@ body html{
 .shake {
   animation: shake 1s ease-in-out;
 }
+
 
 .toggle {
   visibility: hidden;
@@ -180,3 +183,13 @@ body html{
     transform: translateX(0px) scale(1);
   }
 }
+
+.wrong {
+  background-color: rgb(237, 89, 89)!important;
+}
+
+.right {
+  background-color: #8EC3AE!important;
+
+}
+
