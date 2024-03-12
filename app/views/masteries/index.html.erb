@@ -1,1 +1,24 @@
-<h1>hi</h1>
+
+<h2 class="list-header"> Your Progress </h2>
+  <div class="list-box-full" data-selection-target="list">
+  <% @words=current_user.words %>
+    <% @words.each do |word|%>
+    <div class="list-item"><%= word.article %> <%= word.german %>
+      <div>
+      <% @successes = 0 %>
+      <% if word.masteries.exists?(user_id: current_user.id) %>
+        <% @successes=word.masteries.find_by(user_id: current_user.id).successes %>
+        <% if @successes > 0 %>
+          <% @successes.times do %>
+            <i class="fa-solid fa-star"></i>
+          <% end %>
+        <% end %>
+      <% end %>
+        <% (3 - @successes).times do %>
+          <i class="fa-regular fa-star"></i>
+        <% end %>
+      </div>
+    </div>
+    <% end %>
+</div>
+<%= button_to "Home", home_path , method: :get, class: "btn-styling btn-position-play"%>
