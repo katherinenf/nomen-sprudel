@@ -2,6 +2,7 @@ class WordSetsController < ApplicationController
 
   def index
     @sets = WordSet.all
+    @new_word_set = WordSet.new
     if params["url_path"]
       redirect_to word_set_path(params["url_path"]["set"])
     end
@@ -21,10 +22,6 @@ class WordSetsController < ApplicationController
   def word_set_create
     @set = WordSet.find(params[:id])
     @words = Word.all
-  end
-
-  def new
-    @new_word_set = WordSet.new
   end
 
   def create

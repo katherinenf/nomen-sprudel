@@ -3,9 +3,9 @@ class WordsController < ApplicationController
   end
 
 
-  private
+  # private
 
-  def word_params
-    params.require(:word).permit(:english, :german, :article)
-  end
+  # def word_params
+  #   params.require(:word).permit(:english, :german, :article)
+  # end
 end
