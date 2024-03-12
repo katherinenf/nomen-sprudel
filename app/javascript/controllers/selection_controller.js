@@ -7,7 +7,7 @@ export default class extends Controller {
   }
 
   listWords() {
-    console.log(this.buttonTarget.classList.remove('d-none'))
+    this.buttonTarget.classList.remove('d-none')
     const url = `${this.formTarget.action}/${(this.dropdownTarget.value)}`
     fetch(url, {headers: {"Accept": "text/plain"}})
       .then(response => response.text())

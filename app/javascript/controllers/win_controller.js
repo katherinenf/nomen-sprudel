@@ -22,6 +22,9 @@ export default class extends Controller {
       headers: { "Accept": "text/plain" },
       body: updateIDs
     })
+    .then(response=> {
+      window.location.href='/masteries'
+    })
   }
 
   // testConfetti(event) {

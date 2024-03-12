@@ -18,15 +18,12 @@
         selection_target: "button"
         } %>
   <% end %>
-  <%= button_to "create set", "#", method: :get, class: "btn-styling btn-position-create-set"%>
 </div>
 
-<!-----create set ---->
 
-<div class="container p-4">
-<h2> Create a new set: </h2>
-  <%= simple_form_for(@new_word_set) do |f| %>
-    <%= f.input :name %>
-    <%= f.button :submit, "add words to set", class: "btn-styling" %>
-  <% end %>
+<div data-controller="form-toggle" class="mt-5">
+  <button data-action="click->form-toggle#fire" class="btn-styling btn-position-go">Create a new set</button>
+  <div data-form-toggle-target="togglableElement" class="d-none">
+    <%= render "shared/form", new_word_set: @new_word_set%>
+  </div>
 </div>
