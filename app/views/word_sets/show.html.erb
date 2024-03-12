@@ -1,6 +1,5 @@
 
- <div data-controller="answer">
-  <div data-controller="win">
+ <div class="controllers" data-controller="answer win toggle">
     <div class="container-info-button" data-action="click->answer#popupInfo">
       <div class="info-button" >i</div>
       <div data-answer-target="info" id="info" class="popup-info-button">
@@ -11,7 +10,7 @@
     </div>
   </div>
 
-    <div class="flexbox position-article-bubbles d-none">
+    <div class="flexbox position-article-bubbles d-none" data-toggle-target="static">
       <div class="container-background-image" data-answer-target="article" data-action="click->answer#checkAnswer">
           <img src="https://www.freeiconspng.com/uploads/bubble-transparent-hd-png-27.png" alt="Background Image" class="background-image">
           <div class="text-container-background-image">
@@ -79,37 +78,17 @@
           <%= button_to "Go to homepage", home_path , method: :get, class: "btn-styling btn-position-play"%>
         </div>
       </div>
-    </div>
 
   <audio id="bubble" src="<%= image_path("bubble.mp3")%>" type="audio/mpeg"></audio>
 
   <% articles=["der", "die", "das"] %>
 
-  <div id= "background-wrap" data-controller="bubble" data-bubble-target="box">
-    <div class="bubble b1" data-action="click->bubble#popBubble click->answer#checkAnswer">
-      <div class="bubble-text"><p><%= articles.sample %></p></div>
-    </div>
-    <div class= "bubble b2" data-action="click->bubble#popBubble click->answer#checkAnswer">
-      <div class="bubble-text"><p><%= articles.sample %></p></div>
-    </div>
-    <div class= "bubble b3" data-action="click->bubble#popBubble click->answer#checkAnswer">
-      <div class="bubble-text"><p><%= articles.sample %></p></div>
-    </div>
-    <div class= "bubble b4" data-action="click->bubble#popBubble click->answer#checkAnswer">
-      <div class="bubble-text"><p><%= articles.sample %></p></div>
-    </div>
-    <div class= "bubble b5" data-action="click->bubble#popBubble click->answer#checkAnswer">
-      <div class="bubble-text"><p><%= articles.sample %></p></div>
-    </div>
+  <div id= "background-wrap"
+    data-controller="bubble" data-bubble-target="box" data-toggle-target='dynamic'>
   </div>
+
+  <input type="checkbox" id="test" class="toggle"  data-action="click->toggle#changeMode">
+  <label for="test" class="label"  >
+    <div class="ball" ></div>
+  </label>
 </div>
-
-<input type="checkbox" id="test" class=toggle>
-
-<label for="test" class="label">
-
-<div class="ball">
-
-</div>
-
-</label>

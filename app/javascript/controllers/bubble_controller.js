@@ -5,24 +5,38 @@ export default class extends Controller {
   static targets = ['box']
 
   connect() {
+    this.addBubbles()
   }
 
   popBubble(event) {
     // Perform actions to pop the bubble, e.g., hide or remove it
     event.target.closest(".bubble").style.display = 'none';
-    console.log(event.target.closest(".bubble"))
+    // console.log(event.target.closest(".bubble"))
     this.audioBubble()
   }
 
-  addBubble() {
-    const bubbles = ["bubble b1", "bubble b2", "bubble b3", "bubble b4", "bubble b5"]
-    console.log(bubbles.sample)
+  getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
+
+  addBubbles() {
     const articles = ["der", "die", "das"]
     this.boxTarget.insertAdjacentHTML("beforeend",
-    `<div class= ${bubbles.sample} data-controller="bubble" data-action="click->bubble#popBubble click->answer#checkAnswer">
-    <div class="bubble-text"><p>${articles.sample}</p></div>
-    </div>`
-    )
+    `<div class="bubble b1" data-action="click->bubble#popBubble click->answer#checkAnswer">
+      <div class="bubble-text"><p>der</p></div>
+    </div>
+    <div class= "bubble b2" data-action="click->bubble#popBubble click->answer#checkAnswer">
+      <div class="bubble-text"><p>die</p></div>
+    </div>
+    <div class= "bubble b3" data-action="click->bubble#popBubble click->answer#checkAnswer">
+      <div class="bubble-text"><p>das</p></div>
+    </div>
+    <div class= "bubble b4" data-action="click->bubble#popBubble click->answer#checkAnswer">
+      <div class="bubble-text"><p>${articles[this.getRandomInt(3)]}</p></div>
+    </div>
+    <div class= "bubble b5" data-action="click->bubble#popBubble click->answer#checkAnswer">
+      <div class="bubble-text"><p>${articles[this.getRandomInt(3)]}</p></div>
+    </div>`)
   }
 
   audioBubble() {
