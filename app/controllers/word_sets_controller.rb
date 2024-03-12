@@ -17,4 +17,26 @@ class WordSetsController < ApplicationController
       }
     end
   end
+
+  def word_set_create
+    @set = WordSet.find(params[:id])
+    @words = Word.all
+  end
+
+  def new
+    @new_word_set = WordSet.new
+  end
+
+  def create
+    @new_word_set = WordSet.new(new_word_set_params)
+    @new_word_set.save
+
+    redirect_to word_set_create_path(@new_word_set)
+  end
+
+  private
+
+  def new_word_set_params
+    params.require(:word_set).permit(:name)
+  end
 end
