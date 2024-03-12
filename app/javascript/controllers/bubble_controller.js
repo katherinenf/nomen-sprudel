@@ -21,7 +21,6 @@ export default class extends Controller {
 
   addBubbles() {
     const articles = ["der", "die", "das"]
-    console.log(articles.sample)
     this.boxTarget.insertAdjacentHTML("beforeend",
     `<div class="bubble b1" data-action="click->bubble#popBubble click->answer#checkAnswer">
       <div class="bubble-text"><p>der</p></div>
