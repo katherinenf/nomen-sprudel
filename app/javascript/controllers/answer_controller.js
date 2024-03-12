@@ -1,4 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
+import confetti from "canvas-confetti";
 
 // Connects to data-controller="answer"
 export default class extends Controller {
@@ -6,7 +7,7 @@ export default class extends Controller {
 
   connect() {
     // set the first word as visible
-    this.nounTarget.classList.add('active')
+    this.nounTarget.classList.add('active');
   }
 
   popupWin() {
@@ -29,23 +30,30 @@ export default class extends Controller {
     // find the active noun
     const currentNoun = document.querySelector('.active')
     // if the correct answer was chosen
-    console.log(event.target.innerText)
+    // console.log(event.target.innerText.strip)
+    const chosen_article = event.target.closest(".answer").innerText.trim()
     console.log(currentNoun.dataset.article)
-    if (event.target.innerText == currentNoun.dataset.article) {
+    if (chosen_article == currentNoun.dataset.article) {
       // add the article to the noun bubble
       currentNoun.innerHTML = `<p>${currentNoun.dataset.article}</p>
                                <p>${currentNoun.innerText}</p>`
       // display green
       this.nounTargets.forEach(target => {
-      console.log(target);
       target.classList.add("right")
       });
 
       // display the win pop up if player has reached the end of the set
       if (currentNoun.nextElementSibling == null) {
+        confetti({particleCount: 400, spread: 60, zIndex: 1003});
         this.popupWin()
       } else {
       // pause so the player can see the combination
+
+      // if in bubble mode, create more bubbles
+      setTimeout(() => {
+      this.triggerSecondControllerMethod()
+      }, 1000);
+
       setTimeout(() => {
         // switch the active element
         this.nounTargets.forEach(target => {
@@ -55,8 +63,7 @@ export default class extends Controller {
         currentNoun.nextElementSibling.classList.add('active')
         }, 1500);
       }
-      // if in bubble mode, create more bubbles
-      this.triggerSecondControllerMethod()
+
     // if the incorrect answer was chosen
     } else {
       // update the instance mastery to false
@@ -108,11 +115,20 @@ export default class extends Controller {
     });
   }
 
+  getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
+
   triggerSecondControllerMethod() {
     const element = document.querySelector('[data-controller="bubble"]');
     const secondController = this.application.getControllerForElementAndIdentifier(element, "bubble")
     if (secondController) {
-      secondController.addBubbles()
+      const chance = this.getRandomInt(3)
+      if (chance == 1) {
+        const articles = ["der", "die", "das"]
+        const bubbles = ["b4", "b5", "b6"]
+        secondController.addBubble(bubbles[this.getRandomInt(3)], articles[this.getRandomInt(3)])
+      }
     }
   }
 }

@@ -5,13 +5,21 @@
       <div class="inside">
         <h2 class="list-header"> Words in this list </h2>
           <div class="list-box" data-selection-target="list">
-            <% @words = @set.words %>
             <% @words.each do |word|%>
             <div class="list-item"><%= word.article %> <%= word.german %>
               <div>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
+              <% @successes = 0 %>
+              <% if word.masteries.exists?(user_id: current_user.id) %>
+                <% @successes=word.masteries.find_by(user_id: current_user.id).successes %>
+                <% if @successes > 0 %>
+                  <% @successes.times do %>
+                    <i class="fa-solid fa-star"></i>
+                  <% end %>
+                <% end %>
+              <% end %>
+                <% (3 - @successes).times do %>
+                  <i class="fa-regular fa-star"></i>
+                <% end %>
               </div>
             </div>
             <% end %>
