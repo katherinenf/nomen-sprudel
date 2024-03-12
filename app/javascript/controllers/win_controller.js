@@ -1,4 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
+// import confetti from "canvas-confetti";
 
 // Connects to data-controller="win"
 export default class extends Controller {
@@ -22,4 +23,9 @@ export default class extends Controller {
       body: updateIDs
     })
   }
+
+  // testConfetti(event) {
+  //   event.preventDefault();
+  //   confetti({particleCount: 400, spread: 60, zIndex: 1003, gravity:1.5, colors:["#B65B69", "#B65BA1", "#1FFA0D", "#1B0DFA","#F6FA0D", "#0DEFFA", "#FB0526", "#FB0584", "#FB7905", "#05FBF7" ], shapes: ["star"]});
+  // }
 }
