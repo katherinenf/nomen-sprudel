@@ -1,4 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
+import confetti from "canvas-confetti";
 
 // Connects to data-controller="answer"
 export default class extends Controller {
@@ -6,7 +7,7 @@ export default class extends Controller {
 
   connect() {
     // set the first word as visible
-    this.nounTarget.classList.add('active')
+    this.nounTarget.classList.add('active');
   }
 
   popupWin() {
@@ -43,6 +44,7 @@ export default class extends Controller {
 
       // display the win pop up if player has reached the end of the set
       if (currentNoun.nextElementSibling == null) {
+        confetti({particleCount: 400, spread: 60, zIndex: 1003});
         this.popupWin()
       } else {
       // pause so the player can see the combination
