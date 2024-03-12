@@ -8,8 +8,7 @@ export default class extends Controller {
   }
 
   changeMode() {
-    console.log("change is good")
-    console.log(this.staticTarget)
-    console.log(this.dynamicTarget)
+    this.staticTarget.classList.toggle("d-none")
+    this.dynamicTarget.classList.toggle("d-none")
   }
 }
