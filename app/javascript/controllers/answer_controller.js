@@ -31,7 +31,7 @@ export default class extends Controller {
     const currentNoun = document.querySelector('.active')
     // if the correct answer was chosen
     // console.log(event.target.innerText.strip)
-    const chosen_article = event.target.closest(".bubble").innerText.trim()
+    const chosen_article = event.target.closest(".answer").innerText.trim()
     console.log(currentNoun.dataset.article)
     if (chosen_article == currentNoun.dataset.article) {
       // add the article to the noun bubble
