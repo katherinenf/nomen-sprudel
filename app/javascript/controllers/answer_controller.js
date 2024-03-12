@@ -48,7 +48,9 @@ export default class extends Controller {
       // pause so the player can see the combination
 
       // if in bubble mode, create more bubbles
-      // this.triggerSecondControllerMethod(event.target.innerText)
+      setTimeout(() => {
+      this.triggerSecondControllerMethod()
+      }, 1000);
 
       setTimeout(() => {
         // switch the active element
@@ -111,11 +113,20 @@ export default class extends Controller {
     });
   }
 
+  getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
+
   triggerSecondControllerMethod() {
     const element = document.querySelector('[data-controller="bubble"]');
     const secondController = this.application.getControllerForElementAndIdentifier(element, "bubble")
     if (secondController) {
-      secondController.addBubbles()
+      const chance = this.getRandomInt(3)
+      if (chance == 1) {
+        const articles = ["der", "die", "das"]
+        const bubbles = ["b4", "b5", "b6"]
+        secondController.addBubble(bubbles[this.getRandomInt(3)], articles[this.getRandomInt(3)])
+      }
     }
   }
 }

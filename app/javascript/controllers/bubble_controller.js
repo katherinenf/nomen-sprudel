@@ -5,7 +5,7 @@ export default class extends Controller {
   static targets = ['box']
 
   connect() {
-    this.addBubbles1()
+    this.addBubbles()
   }
 
   addBubble(bubble, article) {
@@ -25,7 +25,7 @@ export default class extends Controller {
     this.addBubble(bubble_type, article)
   }
 
-  addBubbles1() {
+  addBubbles() {
     this.boxTarget.insertAdjacentHTML("beforeend",
     `<div class="bubble b1" data-action="click->bubble#popBubble click->answer#checkAnswer">
       <div class="bubble-text"><p>der</p></div>
@@ -35,19 +35,6 @@ export default class extends Controller {
     </div>
     <div class= "bubble b3" data-action="click->bubble#popBubble click->answer#checkAnswer">
       <div class="bubble-text"><p>das</p></div>
-    </div>`)
-  }
-
-  addBubbles2() {
-    this.boxTarget.insertAdjacentHTML("beforeend",
-    `<div class="bubble b4" data-action="click->bubble#popBubble click->answer#checkAnswer">
-      <div class="bubble-text"><p>die</p></div>
-    </div>
-    <div class= "bubble b5" data-action="click->bubble#popBubble click->answer#checkAnswer">
-      <div class="bubble-text"><p>das</p></div>
-    </div>
-    <div class= "bubble b6" data-action="click->bubble#popBubble click->answer#checkAnswer">
-      <div class="bubble-text"><p>der</p></div>
     </div>`)
   }
 
