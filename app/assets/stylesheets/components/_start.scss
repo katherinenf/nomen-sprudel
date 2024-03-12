@@ -13,6 +13,8 @@
 // }
 
 .inside {
+  position: relative;
+  z-index: 9;
   text-align: center;
   overflow: hidden;
 }
@@ -77,9 +79,23 @@ img:hover {
   width: 10px;
 }
 
+.bubble-text {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  font-size: 33px;
+  font-family: "Mouse Memoirs", sans-serif;
+  letter-spacing: 5px;
+  font-weight: bolder;
+  z-index: -1;
+}
+
+
 .bubble.b1 {
   animation: animateBubble 15s linear infinite, sideways 2s
   ease-in-out infinite alternate;
+  position: relative;
   left: -5%;
   top: 5%;
   transform: scale(0.6);
@@ -150,7 +166,7 @@ img:hover {
 }
 
 .bubble.b10 {
-  animation: animateBubble 3s linear infinite, sideways 2s
+  animation: animateBubble 8s linear infinite, sideways 2s
   ease-in-out infinite alternate;
   left: 80%;
   top: 80%;

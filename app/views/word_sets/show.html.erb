@@ -1,6 +1,5 @@
 
-</html>
- <body data-controller="answer">
+ <div data-controller="answer">
   <div data-controller="win">
     <div class="container-info-button" data-action="click->answer#popupInfo">
       <div class="info-button" >i</div>
@@ -12,7 +11,7 @@
     </div>
   </div>
 
-    <div class="flexbox position-article-bubbles">
+    <div class="flexbox position-article-bubbles d-none">
       <div class="container-background-image" data-answer-target="article" data-action="click->answer#checkAnswer">
           <img src="https://www.freeiconspng.com/uploads/bubble-transparent-hd-png-27.png" alt="Background Image" class="background-image">
           <div class="text-container-background-image">
@@ -76,10 +75,41 @@
       <div class="win-show">
         <div id="popup-win" class="popup-win-show" data-answer-target="win">
           <span class="close" data-action="click->answer#popupWin">&times;</span>
-          <p>Congratulations, you mastered this set🤟🏼!</p>
+          <p>Congratulations, you've mastered this set🤟🏼!</p>
           <%= button_to "Go to homepage", home_path , method: :get, class: "btn-styling btn-position-play"%>
         </div>
       </div>
     </div>
-  </body>
-</html>
+
+  <audio id="bubble" src="<%= image_path("bubble.mp3")%>" type="audio/mpeg"></audio>
+
+  <% articles=["der", "die", "das"] %>
+
+  <div id= "background-wrap" data-controller="bubble" data-bubble-target="box">
+    <div class="bubble b1" data-action="click->bubble#popBubble click->answer#checkAnswer">
+      <div class="bubble-text"><p><%= articles.sample %></p></div>
+    </div>
+    <div class= "bubble b2" data-action="click->bubble#popBubble click->answer#checkAnswer">
+      <div class="bubble-text"><p><%= articles.sample %></p></div>
+    </div>
+    <div class= "bubble b3" data-action="click->bubble#popBubble click->answer#checkAnswer">
+      <div class="bubble-text"><p><%= articles.sample %></p></div>
+    </div>
+    <div class= "bubble b4" data-action="click->bubble#popBubble click->answer#checkAnswer">
+      <div class="bubble-text"><p><%= articles.sample %></p></div>
+    </div>
+    <div class= "bubble b5" data-action="click->bubble#popBubble click->answer#checkAnswer">
+      <div class="bubble-text"><p><%= articles.sample %></p></div>
+    </div>
+  </div>
+</div>
+
+<input type="checkbox" id="test" class=toggle>
+
+<label for="test" class="label">
+
+<div class="ball">
+
+</div>
+
+</label>
