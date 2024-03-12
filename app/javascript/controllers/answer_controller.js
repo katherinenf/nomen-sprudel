@@ -7,7 +7,6 @@ export default class extends Controller {
   connect() {
     // set the first word as visible
     this.nounTarget.classList.add('active')
-    console.log("hihi")
   }
 
   popupWin() {
@@ -30,6 +29,8 @@ export default class extends Controller {
     // find the active noun
     const currentNoun = document.querySelector('.active')
     // if the correct answer was chosen
+    console.log(event.target.innerText)
+    console.log(currentNoun.dataset.article)
     if (event.target.innerText == currentNoun.dataset.article) {
       // add the article to the noun bubble
       currentNoun.innerHTML = `<p>${currentNoun.dataset.article}</p>
@@ -109,9 +110,9 @@ export default class extends Controller {
 
   triggerSecondControllerMethod() {
     const element = document.querySelector('[data-controller="bubble"]');
-    const secondController = this.application.getControllerforElementAndIdentifier(element, "bubble")
+    const secondController = this.application.getControllerForElementAndIdentifier(element, "bubble")
     if (secondController) {
-      secondController.addBubble()
+      secondController.addBubbles()
     }
   }
 }
