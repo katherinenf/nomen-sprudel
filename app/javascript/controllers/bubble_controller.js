@@ -5,22 +5,27 @@ export default class extends Controller {
   static targets = ['box']
 
   connect() {
-    this.addBubbles()
+    this.addBubbles1()
+  }
+
+  addBubble(bubble, article) {
+    this.boxTarget.insertAdjacentHTML("beforeend",
+    `<div class="bubble ${bubble}" data-action="click->bubble#popBubble click->answer#checkAnswer">
+      <div class="bubble-text"><p>${article}</p></div>
+    </div>`)
   }
 
   popBubble(event) {
     // Perform actions to pop the bubble, e.g., hide or remove it
-    event.target.closest(".bubble").style.display = 'none';
+    event.target.closest(".bubble").classList.toggle('d-none');
     // console.log(event.target.closest(".bubble"))
     this.audioBubble()
+    const bubble_type = event.target.closest(".bubble").classList[1]
+    const article = event.target.innerText
+    this.addBubble(bubble_type, article)
   }
 
-  getRandomInt(max) {
-    return Math.floor(Math.random() * max);
-  }
-
-  addBubbles() {
-    const articles = ["der", "die", "das"]
+  addBubbles1() {
     this.boxTarget.insertAdjacentHTML("beforeend",
     `<div class="bubble b1" data-action="click->bubble#popBubble click->answer#checkAnswer">
       <div class="bubble-text"><p>der</p></div>
@@ -30,12 +35,19 @@ export default class extends Controller {
     </div>
     <div class= "bubble b3" data-action="click->bubble#popBubble click->answer#checkAnswer">
       <div class="bubble-text"><p>das</p></div>
-    </div>
-    <div class= "bubble b4" data-action="click->bubble#popBubble click->answer#checkAnswer">
-      <div class="bubble-text"><p>${articles[this.getRandomInt(3)]}</p></div>
+    </div>`)
+  }
+
+  addBubbles2() {
+    this.boxTarget.insertAdjacentHTML("beforeend",
+    `<div class="bubble b4" data-action="click->bubble#popBubble click->answer#checkAnswer">
+      <div class="bubble-text"><p>die</p></div>
     </div>
     <div class= "bubble b5" data-action="click->bubble#popBubble click->answer#checkAnswer">
-      <div class="bubble-text"><p>${articles[this.getRandomInt(3)]}</p></div>
+      <div class="bubble-text"><p>das</p></div>
+    </div>
+    <div class= "bubble b6" data-action="click->bubble#popBubble click->answer#checkAnswer">
+      <div class="bubble-text"><p>der</p></div>
     </div>`)
   }
 

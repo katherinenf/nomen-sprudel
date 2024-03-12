@@ -29,15 +29,15 @@ export default class extends Controller {
     // find the active noun
     const currentNoun = document.querySelector('.active')
     // if the correct answer was chosen
-    console.log(event.target.innerText)
+    // console.log(event.target.innerText.strip)
+    const chosen_article = event.target.closest(".bubble").innerText.trim()
     console.log(currentNoun.dataset.article)
-    if (event.target.innerText == currentNoun.dataset.article) {
+    if (chosen_article == currentNoun.dataset.article) {
       // add the article to the noun bubble
       currentNoun.innerHTML = `<p>${currentNoun.dataset.article}</p>
                                <p>${currentNoun.innerText}</p>`
       // display green
       this.nounTargets.forEach(target => {
-      console.log(target);
       target.classList.add("right")
       });
 
@@ -46,6 +46,10 @@ export default class extends Controller {
         this.popupWin()
       } else {
       // pause so the player can see the combination
+
+      // if in bubble mode, create more bubbles
+      // this.triggerSecondControllerMethod(event.target.innerText)
+
       setTimeout(() => {
         // switch the active element
         this.nounTargets.forEach(target => {
@@ -55,8 +59,7 @@ export default class extends Controller {
         currentNoun.nextElementSibling.classList.add('active')
         }, 1500);
       }
-      // if in bubble mode, create more bubbles
-      this.triggerSecondControllerMethod()
+
     // if the incorrect answer was chosen
     } else {
       // update the instance mastery to false
