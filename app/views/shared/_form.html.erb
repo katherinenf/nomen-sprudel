@@ -1,0 +1,7 @@
+<div class="container p-4">
+  <h2> Create a new set: </h2>
+    <%= simple_form_for(@new_word_set) do |f| %>
+    <%= f.input :name %>
+    <%= f.button :submit, "add words to set", class: "btn-styling" %>
+    <% end %>
+</div>
