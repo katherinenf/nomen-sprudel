@@ -34,17 +34,17 @@ export default class extends Controller {
       // add the article to the noun bubble
       currentNoun.innerHTML = `<p>${currentNoun.dataset.article}</p>
                                <p>${currentNoun.innerText}</p>`
-
-
+      // display green
       this.nounTargets.forEach(target => {
-        console.log(target);
-        target.classList.add("right")
+      console.log(target);
+      target.classList.add("right")
       });
 
-      // pause so the player can see the combination
+      // display the win pop up if player has reached the end of the set
       if (currentNoun.nextElementSibling == null) {
         this.popupWin()
       } else {
+      // pause so the player can see the combination
       setTimeout(() => {
         // switch the active element
         this.nounTargets.forEach(target => {
@@ -52,22 +52,19 @@ export default class extends Controller {
         });
         currentNoun.classList.remove('active')
         currentNoun.nextElementSibling.classList.add('active')
-
         }, 1500);
-       
-      }, 1000);
-      this.triggerSecondControllerMethod()
-
       }
-
+      // if in bubble mode, create more bubbles
+      this.triggerSecondControllerMethod()
     // if the incorrect answer was chosen
     } else {
-      // update the mastery
+      // update the instance mastery to false
       currentNoun.dataset.mastery="false"
 
       // Add the "shake" class to the clicked element
       clickedElement.classList.add('shake');
 
+      // displaye red
       this.nounTargets.forEach(target => {
         target.classList.add("wrong")
       });
@@ -86,7 +83,7 @@ export default class extends Controller {
       ${currentNoun.innerText}
       </button>`)
     }
-    // Remove the "shake" class after the animation duration (adjust as needed)
+    // Remove the "shake" and green after the animation duration
     setTimeout(() => {
       this.nounTargets.forEach(target => {
         target.classList.remove("wrong")
@@ -97,11 +94,9 @@ export default class extends Controller {
   }
 
     popupInfo() {
-    console.log("hi")
     this.infoTarget.classList.toggle("show");
     this.overlayTarget.classList.toggle("show");
   }
-
 
   postMasteries() {
     let masteryString = ""
