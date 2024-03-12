@@ -1,6 +1,7 @@
 <%= image_tag "logo_small.png", class: "second-logo-styling" %>
 
 <h2 class="choose-set-styling">Choose a set:</h2>
+
 <div data-controller="selection">
   <%= simple_form_for "url_path", method: :get, data: {selection_target: "form"} do |f| %>
     <%= f.input :set, collection: @sets, label: false,
@@ -10,11 +11,22 @@
               selection_target: "dropdown"
               }
             } %>
+    <div data-selection-target="list"></div>
+
     <%= f.button :submit, "GO!", class: "btn-styling btn-position-go d-none",
         data: {
         selection_target: "button"
         } %>
   <% end %>
+  <%= button_to "create set", "#", method: :get, class: "btn-styling btn-position-create-set"%>
+</div>
 
-  <div data-selection-target="list"></div>
+<!-----create set ---->
+
+<div class="container p-4">
+<h2> Create a new set: </h2>
+  <%= simple_form_for(@new_word_set) do |f| %>
+    <%= f.input :name %>
+    <%= f.button :submit, "add words to set", class: "btn-styling" %>
+  <% end %>
 </div>

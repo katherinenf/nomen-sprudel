@@ -3,9 +3,15 @@
 // }
 
 .inside-list {
-  max-width: 90%;
+  background-color: rgba(255,255,255,0.5);
   border-radius: 5px;
+  max-width: 81%;
+  // border-radius: 12px;
+  margin-left: 10%;
+  // border: 4px solid rgba(83, 145, 195, 0.8);
 }
+
+
 .list-item {
 display: flex;
 justify-content: space-between;
@@ -20,11 +26,9 @@ font-size: 20px;
 letter-spacing: 3px;
 }
 
-
-
 .list-box {
   overflow: scroll;
-  width: 80%;
+  width: 97%;
   height: 200px;
   margin: 5px;
 }
@@ -38,6 +42,7 @@ letter-spacing: 3px;
 
 .list-header {
   font-family: "Mouse Memoirs", sans-serif;
+  background-color: #Ea9d6D;
   color: #5A5353;
   text-align: center;
   font-size: 24px;
