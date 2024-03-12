@@ -1,6 +1,5 @@
 
-
- <div class="controllers" data-controller="answer win toggle">
+<div class="controllers" data-controller="answer win toggle">
     <div class="container-info-button" data-action="click->answer#popupInfo">
       <div class="info-button" >i</div>
       <div data-answer-target="info" id="info" class="popup-info-button">
@@ -10,17 +9,14 @@
         If your choice is wrong, the bubble will shake no. If you pick the right class you go on to the next noun challenge. Happy Sprudeling☀️</p>
     </div>
   </div>
-</div>
 
-
-    <div class="flexbox position-article-bubbles d-none" data-toggle-target="static">
+    <div class="flexbox position-article-bubbles" data-toggle-target="static">
       <div class="container-background-image" data-answer-target="article" data-action="click->answer#checkAnswer">
           <img src="https://www.freeiconspng.com/uploads/bubble-transparent-hd-png-27.png" alt="Background Image" class="background-image">
           <div class="text-container-background-image">
             <p>der</p>
           </div>
         </div>
-      </div>
 
     <div class="container-background-image" data-answer-target="article" data-action="click->answer#checkAnswer">
         <img src="https://www.freeiconspng.com/uploads/bubble-transparent-hd-png-27.png" alt="Background Image" class="background-image">
@@ -88,7 +84,7 @@
 
   <% articles=["der", "die", "das"] %>
 
-  <div id= "background-wrap"
+  <div id="background-wrap" class="d-none"
     data-controller="bubble" data-bubble-target="box" data-toggle-target='dynamic'>
   </div>
 
