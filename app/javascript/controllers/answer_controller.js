@@ -7,7 +7,6 @@ export default class extends Controller {
   connect() {
     // set the first word as visible
     this.nounTarget.classList.add('active')
-    console.log("hihi")
   }
 
   popupWin() {

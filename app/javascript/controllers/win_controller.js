@@ -5,7 +5,6 @@ export default class extends Controller {
   static targets = ["words"]
 
   connect() {
-    console.log('hello')
   }
 
   updateMasteries() {
