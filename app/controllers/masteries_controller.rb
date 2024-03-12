@@ -1,9 +1,9 @@
 class MasteriesController < ApplicationController
   skip_before_action :verify_authenticity_token
 
-  def index
+  def updateAll
     respond_to do |format|
-      format.html
+      format.html { redirect_to masteries_path }
       format.text {
         @ids = request.raw_post.split
         @my_masteries = Mastery.where(user: current_user)
@@ -11,7 +11,13 @@ class MasteriesController < ApplicationController
           # check if mastery already exists
           if @my_masteries.where(word_id: id).exists?
             @mastery = @my_masteries.find_by(word_id: id)
-            @mastery.update(mastered: true)
+            # check number of successes, if over 3, switch to mastered
+            if @mastery.successes < 3
+              increment = @mastery.successes + 1
+              @mastery.update(successes: increment)
+            else
+              @mastery.update(mastered: true, successes: 0)
+            end
           else
             @mastery = Mastery.new
             @mastery.user_id = current_user.id
@@ -19,8 +25,9 @@ class MasteriesController < ApplicationController
             @mastery.save
           end
         end
-        redirect_to masteries_path
       }
     end
   end
+
+  def index; end
 end

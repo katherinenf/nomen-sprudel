@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get "practice_set_up" => "word_sets#index"
   get "practice" => "word_sets#show"
 
-  post "masteries" => "masteries#index"
+  post "masteries" => "masteries#updateAll"
 
   resources :masteries, only: [:index]
 end

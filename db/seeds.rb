@@ -1,4 +1,5 @@
 p 'clearing database'
+Mastery.delete_all
 Word.delete_all
 WordSet.delete_all
 
