@@ -15,9 +15,7 @@ export default class extends Controller {
       if (word.dataset.mastery === "true")
       {updateIDs += `${word.dataset.id} `}
     });
-    console.log(JSON.stringify({updateIDs}))
-
-    // everything above this comment works
+    // make a post request to masteries controller to update these words
     fetch('/masteries', {
       method: "POST",
       headers: { "Accept": "text/plain" },
