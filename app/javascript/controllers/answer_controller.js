@@ -94,7 +94,7 @@ export default class extends Controller {
     }
   }
 
-    popupInfo() {
+   popupInfo() {
     this.infoTarget.classList.toggle("show");
     this.overlayTarget.classList.toggle("show");
   }

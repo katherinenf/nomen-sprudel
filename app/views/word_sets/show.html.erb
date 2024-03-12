@@ -1,4 +1,5 @@
 
+
  <div class="controllers" data-controller="answer win toggle">
     <div class="container-info-button" data-action="click->answer#popupInfo">
       <div class="info-button" >i</div>
@@ -9,6 +10,8 @@
         If your choice is wrong, the bubble will shake no. If you pick the right class you go on to the next noun challenge. Happy Sprudeling☀️</p>
     </div>
   </div>
+</div>
+
 
     <div class="flexbox position-article-bubbles d-none" data-toggle-target="static">
       <div class="container-background-image" data-answer-target="article" data-action="click->answer#checkAnswer">
@@ -17,40 +20,42 @@
             <p>der</p>
           </div>
         </div>
-
-      <div class="container-background-image" data-answer-target="article" data-action="click->answer#checkAnswer">
-          <img src="https://www.freeiconspng.com/uploads/bubble-transparent-hd-png-27.png" alt="Background Image" class="background-image">
-          <div class="text-container-background-image">
-            <p>die</p>
-          </div>
-        </div>
-
-      <div class="container-background-image" data-answer-target="article" data-action="click->answer#checkAnswer">
-          <img src="https://www.freeiconspng.com/uploads/bubble-transparent-hd-png-27.png" alt="Background Image" class="background-image">
-          <div class="text-container-background-image">
-            <p>das</p>
-          </div>
-        </div>
-    </div>
-
-    <div data-answer-target="overlay" class="overlay"></div>
-
-    <div class="container-show">
-      <div class="answers" data-answer-target="answers" data-win-target="words">
-        <% @words.each do |word|%>
-          <button class='round-button d-none'
-                  data-action='click->answer#showEnglish'
-                  data-answer-target='noun'
-                  data-english=<%= word.english%>
-                  data-article=<%= word.article %>
-                  data-mastery='true'
-                  data-id=<%= word.id%>>
-            <%= word.german %>
-            <p class="d-none" data-answer-target='english'> (<%= word.english %>)</p>
-          </button>
-        <% end %>
       </div>
+
+    <div class="container-background-image" data-answer-target="article" data-action="click->answer#checkAnswer">
+        <img src="https://www.freeiconspng.com/uploads/bubble-transparent-hd-png-27.png" alt="Background Image" class="background-image">
+        <div class="text-container-background-image">
+          <p>die</p>
+        </div>
+      </div>
+
+    <div class="container-background-image" data-answer-target="article" data-action="click->answer#checkAnswer">
+        <img src="https://www.freeiconspng.com/uploads/bubble-transparent-hd-png-27.png" alt="Background Image" class="background-image">
+        <div class="text-container-background-image">
+          <p>das</p>
+        </div>
+      </div>
+  </div>
+
+  <div data-answer-target="overlay" class="overlay"></div>
+
+  <div class="container-show">
+    <div class="answers" data-answer-target="answers">
+      <% @words.each do |word|%>
+        <button class='round-button d-none'
+          data-win-target="word"
+          data-action='click->answer#showEnglish'
+          data-answer-target='noun'
+          data-english="<%= word.english%>"
+          data-article="<%= word.article %>"
+          data-mastery='true'
+          data-id="<%= word.id%>">
+          <%= word.german %>
+          <p class="d-none" data-answer-target='english'> <%= word.english %></p>
+        </button>
+      <% end %>
     </div>
+  </div>
 
     <div class="button-show">
       <button class="btn-styling btn-position-quit" data-action="click->answer#popupQuit">Quit</button>
@@ -69,7 +74,7 @@
             action: "click->win#updateMasteries"
           }%>
       </div>
-      </div>
+    </div>
 
       <div class="win-show">
         <div id="popup-win" class="popup-win-show" data-answer-target="win">

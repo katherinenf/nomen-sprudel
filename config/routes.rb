@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   get "practice_set_up" => "word_sets#index"
   get "practice" => "word_sets#show"
 
+  post "masteries" => "masteries#updateAll"
+
+  resources :masteries, only: [:index]
   resources :word_sets, only: [:index, :show, :new, :create] do
     resources :word, only: [:index, :new, :create, :edit]
   end
