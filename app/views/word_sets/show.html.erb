@@ -1,19 +1,24 @@
-<div data-controller="win answer">
-  <div class="container-info-button" data-action="click->answer#popupInfo">
-    <div class="info-button" >i</div>
-    <div data-answer-target="info" id="info" class="popup-info-button">
-      <span class="close" >&times;</span>
-      <h2>Tutorial</h2>
-      <p>When a Noun pops up on the big blue button, you can choose the class by clicking on one of the bubbles.
-      If your choice is wrong, the bubble will shake no. If you pick the right class you go on to the next noun challenge. Happy Sprudeling☀️</p>
+
+
+ <div class="controllers" data-controller="answer win toggle">
+    <div class="container-info-button" data-action="click->answer#popupInfo">
+      <div class="info-button" >i</div>
+      <div data-answer-target="info" id="info" class="popup-info-button">
+        <span class="close" >&times;</span>
+        <h2>Tutorial</h2>
+        <p>When a Noun pops up on the big blue button, you can choose the class by clicking on one of the bubbles.
+        If your choice is wrong, the bubble will shake no. If you pick the right class you go on to the next noun challenge. Happy Sprudeling☀️</p>
+    </div>
   </div>
 </div>
 
-  <div class="flexbox">
-    <div class="container-background-image" data-answer-target="article" data-action="click->answer#checkAnswer">
-        <img src="https://www.freeiconspng.com/uploads/bubble-transparent-hd-png-27.png" alt="Background Image" class="background-image">
-        <div class="text-container-background-image">
-          <p>der</p>
+
+    <div class="flexbox position-article-bubbles d-none" data-toggle-target="static">
+      <div class="container-background-image" data-answer-target="article" data-action="click->answer#checkAnswer">
+          <img src="https://www.freeiconspng.com/uploads/bubble-transparent-hd-png-27.png" alt="Background Image" class="background-image">
+          <div class="text-container-background-image">
+            <p>der</p>
+          </div>
         </div>
       </div>
 
@@ -53,7 +58,7 @@
   </div>
 
     <div class="button-show">
-      <button class="btn-styling btn-position-play" data-action="click->answer#popupQuit">Quit</button>
+      <button class="btn-styling btn-position-quit" data-action="click->answer#popupQuit">Quit</button>
         <div id="popup-quit" class="popup-button-show" data-answer-target="quit">
           <span class="close" data-action="click->answer#popupQuit">&times;</span>
           <p>Are you sure?</p>
@@ -64,7 +69,7 @@
     <div class="button-show">
       <div class="popup-button" >
           <p>You win!</p>
-          <%= button_to "save", home_path , method: :get, class: "btn-styling btn-position-play",
+          <%= button_to "test code", home_path , method: :get, class: "btn-styling btn-position-play",
           data: {
             action: "click->win#updateMasteries"
           }%>
@@ -74,10 +79,21 @@
       <div class="win-show">
         <div id="popup-win" class="popup-win-show" data-answer-target="win">
           <span class="close" data-action="click->answer#popupWin">&times;</span>
-          <p>Congratulations, you mastered this set🤟🏼!</p>
+          <p>Congratulations, you've mastered this set🤟🏼!</p>
           <%= button_to "Go to homepage", home_path , method: :get, class: "btn-styling btn-position-play"%>
         </div>
       </div>
-    </div>
+
+  <audio id="bubble" src="<%= image_path("bubble.mp3")%>" type="audio/mpeg"></audio>
+
+  <% articles=["der", "die", "das"] %>
+
+  <div id= "background-wrap"
+    data-controller="bubble" data-bubble-target="box" data-toggle-target='dynamic'>
   </div>
-  </div>
+
+  <input type="checkbox" id="test" class="toggle"  data-action="click->toggle#changeMode">
+  <label for="test" class="label"  >
+    <div class="ball" ></div>
+  </label>
+</div>

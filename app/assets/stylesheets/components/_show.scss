@@ -2,17 +2,22 @@ body html{
   margin: auto;
   padding-top: 20px;
 }
+// .container-info-button {
+//   z-index: 999999;
+//   position: relative;
 
 .container-show {
-  padding: 150px;
+  margin-top: 120px;
+  padding: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .info-button {
+  z-index: 999999;
   margin: 20px;
-  position: right;
+  display: inline-block;
   bottom: 80px;
   right: 80px;
   border: 4px solid rgb(49, 102, 201);
@@ -46,22 +51,22 @@ body html{
   box-shadow: 10px 10px 10px rgba(2, 2, 0, 0.1);
 }
 
-.round-button:hover {
-  background-color: #8EC3AE;
-}
 
 .flexbox {
   display: flex;
-  padding: 19px;
-  margin-top: 80px;
+  margin-top: 5px;
   justify-content: space-between;
 }
 
 .container-background-image {
   position: relative;
   flex: 1;
+  margin-top: 5%;
 }
 
+.data-action {
+  background-color: #8EC3AE;
+}
 .background-image {
   position: absolute;
   top: 0;
@@ -72,17 +77,18 @@ body html{
   z-index: -1;
 }
 
-
 .text-container-background-image {
   position: relative;
+  width: min-content;
   top: 55%;
   left: 30%;
   z-index: 1;
 }
 
 .text-container-background-image p {
-  margin-top: 29px;
+  margin: 29px 0px 18px;
   font-size: 33px;
+  width: fit-content;
   font-family: "Mouse Memoirs", sans-serif;
   letter-spacing: 5px;
   font-weight: bolder;
@@ -91,7 +97,8 @@ body html{
 }
 
 .button-show {
-  padding: 5px;
+  z-index: 99999999;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -117,4 +124,77 @@ body html{
 
 .shake {
   animation: shake 1s ease-in-out;
+}
+
+
+.toggle {
+  visibility: hidden;
+}
+
+.label {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  margin: 20px;
+  background-color: pink;
+  width: 80px;
+  height: 40px;
+  border-radius: 50px;
+  cursor: pointer;
+  display: inline-block;
+  z-index: 999;
+
+}
+
+.toggle:checked + .label {
+  background-color: black;
+}
+
+.ball {
+  background-color: white;
+  width: 37px;
+  height: 37px;
+  border-radius: 50px;
+  position: absolute;
+  top: 1.5px;
+  left: 1.5px;
+  animation: slideOff 0.3s linear forwards;
+  z-index: 999;
+}
+
+.toggle:checked + .label .ball {
+  animation: slideOn 0.3s linear forwards;
+}
+
+@keyframes slideOn {
+  0%{
+    transform: translateX(0px) scale(1);
+  }
+  50% {
+    transform: translateX(20px) scale(1.2);
+  }
+  100% {
+    transform: translateX(40px) scale(1);
+  }
+}
+
+@keyframes slideOff {
+  0%{
+    transform: translateX(40px) scale(1);
+  }
+  50% {
+    transform: translateX(20px) scale(1.2);
+  }
+  100% {
+    transform: translateX(0px) scale(1);
+  }
+}
+
+.wrong {
+  background-color: rgb(237, 89, 89)!important;
+}
+
+.right {
+  background-color: #8EC3AE!important;
+
 }

@@ -1,15 +1,22 @@
-.container span {
-  display: block;
-  animation: text 3s;
-}
+// .container span {
+//   display: block;
+//   animation: text 3s;
+// }
 
-.greeting-styling {
-  color: #FF6969;
-  // text-shadow: 1px -7px 10px #def, 0 0 0 #bd7d7d, 0px 0px 0px #def;
-  font-size: 80px;
-  font-family: "Francois One", sans-serif;
-  font-weight: bold;
-  margin-bottom: 60px;
+// .greeting-styling {
+//   color: #FF6969;
+//   // text-shadow: 1px -7px 10px #def, 0 0 0 #bd7d7d, 0px 0px 0px #def;
+//   font-size: 80px;
+//   font-family: "Francois One", sans-serif;
+//   font-weight: bold;
+//   margin-bottom: 60px;
+// }
+
+.inside {
+  position: relative;
+  z-index: 9;
+  text-align: center;
+  overflow: hidden;
 }
 
 @keyframes text {
@@ -72,9 +79,23 @@ img:hover {
   width: 10px;
 }
 
+.bubble-text {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  font-size: 33px;
+  font-family: "Mouse Memoirs", sans-serif;
+  letter-spacing: 5px;
+  font-weight: bolder;
+  z-index: -1;
+}
+
+
 .bubble.b1 {
   animation: animateBubble 15s linear infinite, sideways 2s
   ease-in-out infinite alternate;
+  position: relative;
   left: -5%;
   top: 5%;
   transform: scale(0.6);
@@ -145,7 +166,7 @@ img:hover {
 }
 
 .bubble.b10 {
-  animation: animateBubble 3s linear infinite, sideways 2s
+  animation: animateBubble 8s linear infinite, sideways 2s
   ease-in-out infinite alternate;
   left: 80%;
   top: 80%;
@@ -208,9 +229,4 @@ img:hover {
   100% {
     margin-left: 50px;
   }
-}
-
-.inside {
-  text-align: center;
-  overflow: hidden;
 }
