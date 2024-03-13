@@ -1,5 +1,20 @@
 .forms-design h2 {
   font-size: 33px;
   font-family: "Mouse Memoirs", sans-serif;
+}
+
+.input_size_create_set {
+  margin-left: 10%;
+
+  color: #5A5353;
+  font-size: 35px;
+  font-family: "Mouse Memoirs", sans-serif;
+  letter-spacing: 3px;
+
+  input {
+    width: 90%;
+    height: 72px;
+    border-radius: 12px;
+  }
 
 }
