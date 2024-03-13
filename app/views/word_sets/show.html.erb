@@ -1,5 +1,4 @@
 
- <body>
   <div class="controllers" data-controller="answer win toggle">
       <div class="container-info-button" data-action="click->answer#popupInfo">
         <div class="info-button" >i</div>
@@ -11,7 +10,8 @@
       </div>
     </div>
 
-    <div data-answer-target="overlay" class="overlay"></div>
+    <div data-answer-target="overlay" class="overlay">
+    </div>
 
     <div class="container-show">
       <div class="answers" data-answer-target="answers">
@@ -61,14 +61,6 @@
       </div>
     </div>
 
-      <div class="d-none">
-        <p>You win!</p>
-        <%= button_to "test code", home_path , method: :get, class: "button btn-styling btn-position-play",
-        data: {
-          action: "click->win#testConfetti"
-        }%>
-      </div>
-
       <div class="win-show">
         <div id="popup-win" class="popup-win-show" data-answer-target="win">
           <p>Congratulations, you've mastered this set🤟🏼!</p>
@@ -78,6 +70,7 @@
                 action: "click->win#updateMasteries"
               }%>
         </div>
+      </div>
 
     <audio id="bubble" src="<%= image_path("bubble.mp3")%>" type="audio/mpeg"></audio>
 
@@ -89,7 +82,8 @@
 
     <input type="checkbox" id="test" class="toggle"  data-action="click->toggle#changeMode">
     <label for="test" class="label"  >
-      <div class="ball" ></div>
+      <div class="ball" >
+      </div>
     </label>
 
     <div class="button-show">
@@ -99,9 +93,7 @@
             <span class="close" data-action="click->answer#popupQuit">&times;</span>
             <p>Are you sure?</p>
             <%= button_to "yes", home_path , method: :get, class: "btn-styling btn-position-play"%>
+    </div>
+    </div>
+    </div>
   </div>
-    </div>
-    </div>
-    </div>
-    </div>
-</body>
