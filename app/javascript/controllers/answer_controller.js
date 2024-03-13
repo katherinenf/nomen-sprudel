@@ -46,14 +46,15 @@ export default class extends Controller {
       if (currentNoun.nextElementSibling == null) {
         confetti({particleCount: 400, spread: 60, zIndex: 1003});
         this.popupWin()
+
       } else {
-      // pause so the player can see the combination
 
       // if in bubble mode, create more bubbles
       setTimeout(() => {
       this.triggerSecondControllerMethod()
       }, 1000);
 
+      // pause so the player can see the combination
       setTimeout(() => {
         // switch the active element
         this.nounTargets.forEach(target => {

@@ -22,6 +22,7 @@ class MasteriesController < ApplicationController
             @mastery = Mastery.new
             @mastery.user_id = current_user.id
             @mastery.word_id = id
+            @mastery.successes = 1
             @mastery.save
           end
           current_user.update(high_score: current_user.high_score + 1)

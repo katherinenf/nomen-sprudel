@@ -23,7 +23,11 @@ class WordSetsController < ApplicationController
     @set = WordSet.find(params[:id])
     @all_words = Word.all
     if params[:query].present?
-      @all_words = @all_words.where("german ILIKE ?", "%#{params[:query]}%")
+      sql_subquery = <<~SQL
+      words.german @@ :query
+      OR words.english @@ :query
+      SQL
+      @all_words = @all_words.where(sql_subquery, query: params[:query])
     end
   end
 
