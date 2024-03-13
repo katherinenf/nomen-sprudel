@@ -1,71 +1,73 @@
 
-<div class="controllers" data-controller="answer win toggle">
-    <div class="container-info-button" data-action="click->answer#popupInfo">
-      <div class="info-button" >i</div>
-      <div data-answer-target="info" id="info" class="popup-info-button">
-        <span class="close" >&times;</span>
-        <h2>Tutorial</h2>
-        <p>When a Noun pops up on the big blue button, you can choose the class by clicking on one of the bubbles.
-        If your choice is wrong, the bubble will shake no. If you pick the right class you go on to the next noun challenge. Happy Sprudeling☀️</p>
+ <body>
+  <div class="controllers" data-controller="answer win toggle">
+      <div class="container-info-button" data-action="click->answer#popupInfo">
+        <div class="info-button" >i</div>
+        <div data-answer-target="info" id="info" class="popup-info-button">
+          <span class="close" >&times;</span>
+          <h2>Tutorial</h2>
+          <p>When a Noun pops up on the big blue button, you can choose the class by clicking on one of the bubbles.
+          If your choice is wrong, the bubble will shake no. If you pick the right class you go on to the next noun challenge. Happy Sprudeling☀️</p>
+      </div>
     </div>
-  </div>
 
-  <div data-answer-target="overlay" class="overlay"></div>
+    <div data-answer-target="overlay" class="overlay"></div>
 
-  <div class="container-show">
-    <div class="answers" data-answer-target="answers">
-      <% @words.each do |word|%>
-        <button class='round-button d-none'
-          data-win-target="word"
-          data-action='click->answer#showEnglish'
-          data-answer-target='noun'
-          data-english="<%= word.english%>"
-          data-article="<%= word.article %>"
-          data-mastery='true'
-          data-id="<%= word.id%>">
-          <%= word.german %>
-          <p class="d-none" data-answer-target='english'> <%= word.english %></p>
-        </button>
-      <% end %>
+    <div class="container-show">
+      <div class="answers" data-answer-target="answers">
+        <% @words.each do |word|%>
+          <button class='round-button d-none'
+            data-win-target="word"
+            data-action='click->answer#showEnglish'
+            data-answer-target='noun'
+            data-english="<%= word.english%>"
+            data-article="<%= word.article %>"
+            data-mastery='true'
+            data-id="<%= word.id%>">
+            <%= word.german %>
+            <p class="d-none" data-answer-target='english'> <%= word.english %></p>
+          </button>
+        <% end %>
+      </div>
     </div>
-  </div>
 
-   <div class="flexbox position-article-bubbles" data-toggle-target="static">
+
+    <div class="flexbox position-article-bubbles" data-toggle-target="static">
+        <div class="container-background-image answer" data-answer-target="article" data-action="click->answer#checkAnswer">
+        <div class="bubble-holder">
+            <img src="https://www.freeiconspng.com/uploads/bubble-transparent-hd-png-27.png" alt="Background Image" class="background-image">
+            <div class="text-container-background-image">
+              <p>der</p>
+            </div>
+          </div>
+        </div>
+
       <div class="container-background-image answer" data-answer-target="article" data-action="click->answer#checkAnswer">
-      <div class="bubble-holder">
+        <div class="bubble-holder">
           <img src="https://www.freeiconspng.com/uploads/bubble-transparent-hd-png-27.png" alt="Background Image" class="background-image">
           <div class="text-container-background-image">
-            <p>der</p>
+            <p>die</p>
           </div>
         </div>
       </div>
 
-    <div class="container-background-image answer" data-answer-target="article" data-action="click->answer#checkAnswer">
-      <div class="bubble-holder">
-        <img src="https://www.freeiconspng.com/uploads/bubble-transparent-hd-png-27.png" alt="Background Image" class="background-image">
-        <div class="text-container-background-image">
-          <p>die</p>
+      <div class="container-background-image answer" data-answer-target="article" data-action="click->answer#checkAnswer">
+        <div class="bubble-holder">
+          <img src="https://www.freeiconspng.com/uploads/bubble-transparent-hd-png-27.png" alt="Background Image" class="background-image">
+          <div class="text-container-background-image">
+            <p>das</p>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="container-background-image answer" data-answer-target="article" data-action="click->answer#checkAnswer">
-      <div class="bubble-holder">
-        <img src="https://www.freeiconspng.com/uploads/bubble-transparent-hd-png-27.png" alt="Background Image" class="background-image">
-        <div class="text-container-background-image">
-          <p>das</p>
-        </div>
+      <div class="d-none">
+        <p>You win!</p>
+        <%= button_to "test code", home_path , method: :get, class: "button btn-styling btn-position-play",
+        data: {
+          action: "click->win#testConfetti"
+        }%>
       </div>
-    </div>
-  </div>
-
-    <div class="d-none">
-      <p>You win!</p>
-      <%= button_to "test code", home_path , method: :get, class: "button btn-styling btn-position-play",
-      data: {
-        action: "click->win#testConfetti"
-      }%>
-    </div>
 
       <div class="win-show">
         <div id="popup-win" class="popup-win-show" data-answer-target="win">
@@ -76,18 +78,30 @@
                 action: "click->win#updateMasteries"
               }%>
         </div>
-      </div>
 
-  <audio id="bubble" src="<%= image_path("bubble.mp3")%>" type="audio/mpeg"></audio>
+    <audio id="bubble" src="<%= image_path("bubble.mp3")%>" type="audio/mpeg"></audio>
 
-  <% articles=["der", "die", "das"] %>
+    <% articles=["der", "die", "das"] %>
 
-  <div id="background-wrap" class="d-none"
-    data-controller="bubble" data-bubble-target="box" data-toggle-target='dynamic'>
+    <div id="background-wrap" class="d-none"
+      data-controller="bubble" data-bubble-target="box" data-toggle-target='dynamic'>
+    </div>
+
+    <input type="checkbox" id="test" class="toggle"  data-action="click->toggle#changeMode">
+    <label for="test" class="label"  >
+      <div class="ball" ></div>
+    </label>
+
+    <div class="button-show">
+        <%= image_tag "arrow.png" , class: "arrow" %>
+        <div class="arrow" data-action="click->answer#popupQuit">
+          <div id="popup-quit" class="popup-button-show" data-answer-target="quit">
+            <span class="close" data-action="click->answer#popupQuit">&times;</span>
+            <p>Are you sure?</p>
+            <%= button_to "yes", home_path , method: :get, class: "btn-styling btn-position-play"%>
   </div>
-
-  <input type="checkbox" id="test" class="toggle"  data-action="click->toggle#changeMode">
-  <label for="test" class="label"  >
-    <div class="ball" ></div>
-  </label>
-</div>
+    </div>
+    </div>
+    </div>
+    </div>
+</body>
