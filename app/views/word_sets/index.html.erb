@@ -1,5 +1,12 @@
 <%= image_tag "logo_small.png", class: "second-logo-styling" %>
 
+<div class="inside-arrow">
+        <%= link_to "/home" do %>
+          <%= image_tag "arrow.png" , class: "arrow" %>
+        <% end %>
+</div>
+
+
 <h2 class="choose-set-styling">Choose a set:</h2>
 
 <div data-controller="selection">
