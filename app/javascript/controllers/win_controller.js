@@ -23,7 +23,7 @@ export default class extends Controller {
       body: updateIDs
     })
     .then(response=> {
-      window.location.href='/profile'
+      window.location.href=event.target.form.action
     })
   }
 
