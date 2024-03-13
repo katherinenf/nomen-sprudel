@@ -34,7 +34,6 @@ class WordSetsController < ApplicationController
   def create
     @new_word_set = WordSet.new(new_word_set_params)
     @new_word_set.save!
-
     redirect_to word_set_create_path(@new_word_set)
   end
 
