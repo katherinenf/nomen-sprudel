@@ -23,7 +23,7 @@ export default class extends Controller {
       body: updateIDs
     })
     .then(response=> {
-      window.location.href='/masteries'
+      window.location.href='/profile'
     })
   }
 
