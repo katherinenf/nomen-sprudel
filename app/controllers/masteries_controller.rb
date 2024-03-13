@@ -3,7 +3,7 @@ class MasteriesController < ApplicationController
 
   def updateAll
     respond_to do |format|
-      format.html { redirect_to masteries_path }
+      format.html { redirect_to profile_path }
       format.text {
         @ids = request.raw_post.split
         @my_masteries = Mastery.where(user: current_user)
@@ -24,10 +24,9 @@ class MasteriesController < ApplicationController
             @mastery.word_id = id
             @mastery.save
           end
+          current_user.update(high_score: current_user.high_score + 1)
         end
       }
     end
   end
-
-  def index; end
 end
