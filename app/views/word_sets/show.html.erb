@@ -30,6 +30,13 @@
     </div>
   </div>
 
+    <div class="button-show">
+      <%= image_tag "arrow.png" , class: "arrow" %>
+      <div class="arrow" data-action="click->answer#popupQuit">
+        <div id="popup-quit" class="popup-button-show" data-answer-target="quit">
+          <span class="close" data-action="click->answer#popupQuit">&times;</span>
+          <p>Are you sure?</p>
+          <%= button_to "yes", home_path , method: :get, class: "btn-styling btn-position-play"%>
    <div class="flexbox position-article-bubbles" data-toggle-target="static">
       <div class="container-background-image answer" data-answer-target="article" data-action="click->answer#checkAnswer">
       <div class="bubble-holder">
