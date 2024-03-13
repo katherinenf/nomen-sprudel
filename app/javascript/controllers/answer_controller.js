@@ -39,7 +39,7 @@ export default class extends Controller {
                                <p>${currentNoun.innerText}</p>`
       // display green
       this.nounTargets.forEach(target => {
-      target.classList.add("right")u
+      target.classList.add("right")
       });
 
       // display the win pop up if player has reached the end of the set
