@@ -1,4 +1,4 @@
-<h2 class="p-4 "> Please add words to set with the topic <%= @set.name %> </h2>
+<h2 class="p-4 "> Please add words to set with the topic "<strong><%= @set.name %></strong>"</h2>
 
 <!--------search------------>
 
@@ -17,16 +17,24 @@
   </div>
 </div>
 
-<!----all words -------->
+<!----set is complete, go back to index ----->
+
+<button class="btn-styling btn-position-finish-set">set is complete</button>
+
+<!----all words ------------->
 
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-12 col-lg-6">
-      <div class="inside">
-        <h2 class="list-header"> Words available </h2>
+      <div class="inside-list-create-set">
+        <h2 class="list-header-create-set"> Words available </h2>
           <% @all_words.each do |word| %>
-            <div><%= word.article %> <%= word.german %> <div>
+          <div data-controller="create-new-instance" class="flexbox-create-set list-item-create-set">
+          <div data-create-new-instance-target="word"><%= word.article %> <%= word.german %> </div>
+          <i data-action="click->create-new-instance#add_word" class="fa-regular fa-square-plus "></i>
+          </div>
           <% end %>
+          </div>
       </div>
     </div>
   </div>
