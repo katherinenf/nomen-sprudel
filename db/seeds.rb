@@ -1,9 +1,12 @@
+require "open-uri"
+
 # Seed file to populate word sets with sample data
 
 p 'clearing database'
 Mastery.delete_all
 Word.delete_all
 WordSet.delete_all
+User.delete_all
 
 p 'creating words'
 
@@ -208,3 +211,29 @@ clothing_words.each do |word|
 end
 
 p "all done!"
+
+# seed users
+user1 = User.create!({ email: 'oliver@practice.com', username: 'Oliver Giggles', password: 'sprudel' })
+file1 = URI.open("https://i.pinimg.com/736x/b8/2c/33/b82c336a7a0c2d08f10fb9f198383ebf.jpg")
+user1.photo.attach(io: file1, filename: "photo.jpg", content_type: "image/jpg")
+user1.save
+
+user2 = User.create!({ email: 'ava@practice.com', username: 'Ava Jokester', password: 'sprudel' })
+file2 = URI.open("https://i.pinimg.com/736x/f2/82/cc/f282cc2e9214fca44329c59aea11bca3.jpg")
+user2.photo.attach(io: file2, filename: "photo.jpg", content_type: "image/jpg")
+user2.save
+
+user3 = User.create!({ email: 'joyful@practice.com', username: 'Joyful Jester', password: 'sprudel' })
+file3 = URI.open("https://www.imagediamond.com/blog/wp-content/uploads/2020/06/cartoon-boy-images-17.jpg")
+user3.photo.attach(io: file3, filename: "photo.jpg", content_type: "image/jpg")
+user3.save
+
+user4 = User.create!({ email: 'ethan@practice.com', username: 'Ethan WhoopeeWarrior', password: 'sprudel'})
+file4 = URI.open("https://png.pngtree.com/png-clipart/20210314/original/pngtree-funny-cartoon-boy-png-image_6092956.jpg")
+user4.photo.attach(io: file4, filename: "photo.jpg", content_type: "image/jpg")
+user4.save
+
+user5 = User.create!({ email: 'sophie@practice.com', username: 'Sophie Chuckles', password: 'sprudel' })
+file5 = URI.open("https://cdn3.vectorstock.com/i/1000x1000/56/12/funny-young-woman-cartoon-character-vector-41805612.jpg")
+user5.photo.attach(io: file5, filename: "photo.jpg", content_type: "image/jpg")
+user5.save
