@@ -26,6 +26,21 @@ font-size: 20px;
 letter-spacing: 3px;
 }
 
+.list-item {
+  display: flex;
+  
+  justify-content: space-between;
+  align-items: center;
+  border : 2px solid grey;
+  margin: 2px;
+  padding: 10px;
+  font-family: "Mouse Memoirs", sans-serif;
+  color: #5A5353;
+  border-radius: 5px;
+  font-size: 20px;
+  letter-spacing: 3px;
+  }
+
 .list-box {
   overflow: scroll;
   width: 97%;
