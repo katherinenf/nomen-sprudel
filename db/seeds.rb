@@ -148,7 +148,6 @@ clothing_words = [
   { english: "scarf", german: "Schal", article: "der" }
 ]
 
-p Word.count
 
 # Create word sets
 animal_set = WordSet.create(name: "Animals")
@@ -163,6 +162,7 @@ appliance_set = WordSet.create(name: "Appliances")
 cooking_set = WordSet.create(name: "Cooking")
 clothing_set = WordSet.create(name: "Clothing")
 
+p Word.count
 p WordSet.count
 
 p 'adding words to sets'
@@ -210,8 +210,7 @@ clothing_words.each do |word|
   clothing_set.words.create(word)
 end
 
-p "all done!"
-
+p "adding users"
 # seed users
 user1 = User.create!({ email: 'oliver@practice.com', username: 'Oliver Giggles', password: 'sprudel' })
 file1 = URI.open("https://i.pinimg.com/736x/b8/2c/33/b82c336a7a0c2d08f10fb9f198383ebf.jpg")
@@ -237,3 +236,19 @@ user5 = User.create!({ email: 'sophie@practice.com', username: 'Sophie Chuckles'
 file5 = URI.open("https://cdn3.vectorstock.com/i/1000x1000/56/12/funny-young-woman-cartoon-character-vector-41805612.jpg")
 user5.photo.attach(io: file5, filename: "photo.jpg", content_type: "image/jpg")
 user5.save
+p User.count
+
+p "seeding masteries"
+User.all.each do |user|
+  words = Word.all.shuffle
+  high_score = 0
+  rand(33..60).times do
+    successes = rand(1..3)
+    Mastery.create(word: words.pop, user: user, successes: successes)
+    high_score += successes
+  end
+  user.update(high_score: high_score)
+end
+p Mastery.count
+
+p "all done!"
