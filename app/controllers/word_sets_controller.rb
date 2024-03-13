@@ -24,10 +24,10 @@ class WordSetsController < ApplicationController
     @all_words = Word.all
     if params[:query].present?
       sql_subquery = <<~SQL
-      words.german @@ :query
-      OR words.english @@ :query
+        words.german ILIKE :query
+        OR words.english ILIKE :query
       SQL
-      @all_words = @all_words.where(sql_subquery, query: params[:query])
+      @all_words = @all_words.where(sql_subquery, query: "%#{params[:query]}%")
     end
   end
 
