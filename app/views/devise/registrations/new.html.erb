@@ -12,6 +12,7 @@
                         required: true,
                         autofocus: true,
                         input_html: { autocomplete: "username" }%>
+            <%= f.input :photo, as: :file %>
             <%= f.input :email,
                         required: true,
                         autofocus: true,
@@ -31,6 +32,12 @@
         <% end %>
 
         <%= render "devise/shared/links" %>
+
+  <%# <div class="inside-arrow">
+        <%= link_to "/home" do %>
+          <%# <%= image_tag "arrow.png" , class: "arrow" %>
+        <%# <% end %> %> %> %>
+</div>
    </div>
   </div>
 </div>
