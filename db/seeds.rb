@@ -13,11 +13,11 @@ p 'creating words'
 
 # Create Le Wagon word set
 le_wagon_words = [
-  { english: "rake", german: "Rechen", article: "der" },
   { english: "party", german: "Party", article: "die" },
   { english: "beer", german: "Bier", article: "das" },
+  { english: "rake", german: "Rechen", article: "der" },
   { english: "flashcard", german: "Karteikarte", article: "die" },
-  { english: "banana", german: "Banane", article: "die" }
+  { english: "City Chicken", german: "Stadthuhn", article: "das" }
 ]
 
 # Create animal words
@@ -71,7 +71,8 @@ transport_words = [
   { english: "plane", german: "Flugzeug", article: "das" },
   { english: "ship", german: "Schiff", article: "das" },
   { english: "motorcycle", german: "Motorrad", article: "das" },
-  { english: "subway", german: "U-Bahn", article: "die" }
+  { english: "strike", german: "Streik", article: "der" },
+  { english: "delay", german: "Verspätung", article: "die" }
 ]
 
 # Create weather words
