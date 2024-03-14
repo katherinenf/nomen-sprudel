@@ -23,26 +23,24 @@ font-size: 20px;
 letter-spacing: 3px;
 }
 
-.list-item {
-  display: flex;
-
-  justify-content: space-between;
-  align-items: center;
-  border : 2px solid grey;
-  margin: 2px;
-  padding: 10px;
-  font-family: "Mouse Memoirs", sans-serif;
-  color: #5A5353;
-  border-radius: 5px;
-  font-size: 20px;
-  letter-spacing: 3px;
-  }
-
 .list-box {
   overflow: scroll;
   width: 97%;
   height: 200px;
   margin: 5px;
+}
+
+.list-box-mastery {
+  overflow: scroll;
+  width: 97%;
+  height: 300px;
+  margin: 5px;
+}
+
+.inside-list-mastery {
+  background-color: rgba(255,255,255,0.5);
+  border-radius: 5px;
+  max-width: 90%;
 }
 
 .list-box-full {
