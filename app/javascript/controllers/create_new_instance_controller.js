@@ -17,14 +17,15 @@ export default class extends Controller {
 
     fetch(this.urlValue, {
       method: "POST",
-      headers: {"Content-Type": "application/json"}, //respond_to as in the lecture
-      body: this.wordIdValue
-      })
-    .then(response => response.json)
-    .then((data) => {
-      console.log(data)
-      //create new instance in set
-      // changing on the view
+      headers: {'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').content
+                }
+    })
+
+    .then(response => {
+      this.element.style.backgroundColor = "white";
+      event.target.classList.add("d-none");
     })
   }
 }
