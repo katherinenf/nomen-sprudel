@@ -6,7 +6,6 @@ export default class extends Controller {
   static values = {url: String, wordId: Number}
 
   connect() {
-    console.log("Hello from the controller");
   }
 
   add_word(event) {
