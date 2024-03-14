@@ -236,6 +236,37 @@ user5 = User.create!({ email: 'sophie@practice.com', username: 'Sophie Chuckles'
 file5 = URI.open("https://cdn3.vectorstock.com/i/1000x1000/56/12/funny-young-woman-cartoon-character-vector-41805612.jpg")
 user5.photo.attach(io: file5, filename: "photo.jpg", content_type: "image/jpg")
 user5.save
+
+user6 = User.create!({ email: 'emma@practice.com', username: 'Emmazing Boss Lady', password: 'sprudel', high_score: 100 })
+file6 = URI.open("https://avatars.githubusercontent.com/u/90188399?v=4")
+user6.photo.attach(io: file6, filename: "photo.jpg", content_type: "image/jpg")
+user6.save
+
+user7 = User.create!({ email: 'pedro@practice.com', username: 'Pedro the blackmamba', password: 'sprudel', high_score: 10000 })
+file7 = URI.open("https://dam.malt.com/116c9177-773c-4c73-a8ee-18301a0a8e00?gravity=face&func=face&face_margin=60&w=720&h=720&force_format=jpg")
+user7.photo.attach(io: file7, filename: "photo.jpg", content_type: "image/jpg")
+user7.save
+
+user8 = User.create!({ email: 'lucas@practice.com', username: 'Bonjour, Bug Buster Lucus', password: 'sprudel', high_score: 10 })
+file8 = URI.open("https://avatars.githubusercontent.com/u/91123963?v=4")
+user8.photo.attach(io: file8, filename: "photo.jpg", content_type: "image/jpg")
+user8.save
+
+user9 = User.create!({ email: 'josh@practice.com', username: 'Forever 20 Josh', password: 'sprudel', high_score: 5000 })
+file9 = URI.open("https://ca.slack-edge.com/T02NE0241-U045BSBJQD6-f9f50ddff2bb-512")
+user9.photo.attach(io: file9, filename: "photo.jpg", content_type: "image/jpg")
+user9.save
+
+user10 = User.create!({ email: 'rodrigo@practice.com', username: 'Rodrigo the Ridiculous', password: 'sprudel', high_score: 500 })
+file10 = URI.open("https://ca.slack-edge.com/T02NE0241-U048PL8HTT7-a19e08ee8315-512")
+user10.photo.attach(io: file10, filename: "photo.jpg", content_type: "image/jpg")
+user10.save
+
+user11 = User.create!({ email: 'adam@practice.com', username: 'Adam the Wise Wit', password: 'sprudel', high_score: 12000 })
+file11 = URI.open("https://avatars.githubusercontent.com/u/86358155?v=4")
+user11.photo.attach(io: file11, filename: "photo.jpg", content_type: "image/jpg")
+user11.save
+
 p User.count
 
 p "seeding masteries"
