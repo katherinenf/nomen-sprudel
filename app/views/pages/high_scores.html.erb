@@ -1,0 +1,22 @@
+<div class="container inside-list">
+  <div class="row justify-content-center">
+      <div class="inside">
+        <h2 class="list-header"> Leader Board </h2>
+          <div class="list-box-leaders">
+            <% @users.each do |user|%>
+            <div class="list-item">
+                <%= cl_image_tag(user.photo.key,
+                 height: 50,
+                 width: 50,
+                 crop: :thumb,
+                 gravity: :face,
+                 radius: :max,
+                 fetch_format: :auto) %>
+                 <%= user.username %>
+                 <strong><%= user.high_score %></strong>
+            </div>
+            <% end %>
+        </div>
+      </div>
+    </div>
+</div>
