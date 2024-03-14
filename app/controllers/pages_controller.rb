@@ -3,13 +3,6 @@ class PagesController < ApplicationController
 
   def home; end
 
-  def show
-    @words = []
-    5.times do
-      @words << Word.all.sample
-    end
-  end
-
   def practice_set_up
     @sets = WordSet.all
   end

@@ -3,7 +3,7 @@
     <div class="col-12 col-lg-6">
       <div class="inside">
         <div class="list-box-mastery" data-selection-target="list">
-            <% @words=current_user.words %>
+            <% @words=current_user.words.order(:german) %>
               <% @words.each do |word|%>
               <div class="list-item"><%= word.article %> <%= word.german %> (<%= word.english %>)
                 <div class="star-box">
