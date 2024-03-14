@@ -32,12 +32,13 @@
         <h2 class="list-header-create-set"> Words available </h2>
 
           <% @all_words.each do |word| %>
-          <div data-controller="create-new-instance" class="flexbox-create-set list-item-create-set" data-create-new-instance-url-value="<%= add_word_to_set_path(@set) %>" data-create-new-instance-word-id-value="<%= word.id %>" >
+          <div data-controller="create-new-instance" class="flexbox-create-set list-item-create-set"
+          data-create-new-instance-url-value="<%= add_word_to_set_path(@set, word) %>" >
 
             <div data-create-new-instance-target="word"> <%= word.german %> - <%= word.english %>
             </div>
 
-            <i data-action="click->create-new-instance#add_word" class="fa-regular fa-square-plus "></i>
+            <i data-action="click->create-new-instance#add_word" class="fa-regular fa-square-plus"></i>
 
           </div>
           <% end %>
