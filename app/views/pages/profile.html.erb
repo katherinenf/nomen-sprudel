@@ -14,6 +14,11 @@
       <div class="highscore">
         <h2>Highscore⚡️</h2>
         <%= current_user.high_score %>
+           <div class="inside-crown">
+              <%= link_to "/home" do %>
+                <%= image_tag "crown.png" , class: "crown" %>
+              <% end %>
+        </div>
       </div>
     </div>
     <div class="col-md-4">
