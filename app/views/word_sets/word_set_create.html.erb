@@ -1,3 +1,4 @@
+<div data-controller="clear-form" data-id="<%= @set.id %>">
 <h2 class="p-4 "> Please add words to set with the topic "<strong><%= @set.name %></strong>"</h2>
 
 <!--------search------------>
@@ -9,7 +10,11 @@
         <%= text_field_tag :query,
               params[:query],
               class: "form-control",
-              placeholder: "Find a word"
+              placeholder: "Find a word",
+              data: {
+              clear_form_target: "input",
+              action: "input->clear-form#filter"
+              }
           %>
         <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
       <% end %>
@@ -30,19 +35,9 @@
     <div class="col-12 col-lg-6">
       <div class="inside-list-create-set">
         <h2 class="list-header-create-set"> Words available </h2>
-
-          <% @all_words.each do |word| %>
-          <div data-controller="create-new-instance" class="flexbox-create-set list-item-create-set"
-          data-create-new-instance-url-value="<%= add_word_to_set_path(@set, word) %>" >
-
-            <div data-create-new-instance-target="word"> <%= word.german %> - <%= word.english %>
-            </div>
-
-            <i data-action="click->create-new-instance#add_word" class="fa-regular fa-square-plus"></i>
-
+          <div data-clear-form-target="modal">
+            <%= render partial: "shared/word-card", locals: { all_words: @all_words, set: @set } %>
           </div>
-          <% end %>
-
       </div>
     </div>
   </div>
@@ -50,4 +45,5 @@
         <%= link_to "/practice_set_up" do %>
           <%= image_tag "arrow.png" , class: "arrow" %>
         <% end %>
+</div>
 </div>

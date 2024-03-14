@@ -87,6 +87,7 @@ export default class extends Controller {
       this.answersTarget.insertAdjacentHTML('beforeend',
       `<button class="round-button d-none"
       data-answer-target='noun'
+      data-german='${currentNoun.dataset.german}'
       data-english=${currentNoun.dataset.english}
       data-article=${currentNoun.dataset.article}
       data-mastery='false'
