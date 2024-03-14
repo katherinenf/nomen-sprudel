@@ -29,6 +29,11 @@ class WordSetsController < ApplicationController
       SQL
       @all_words = @all_words.where(sql_subquery, query: "%#{params[:query]}%")
     end
+
+    respond_to do |format|
+      format.html
+      format.text { render partial: "/shared/word-card", locals: { set: @set, all_words: @all_words } }
+    end
   end
 
   def create
