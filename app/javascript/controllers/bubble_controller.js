@@ -5,7 +5,9 @@ export default class extends Controller {
   static targets = ['box']
 
   connect() {
+    if(this.boxTarget.dataset.start == 'false') {
     this.addBubbles()
+    }
   }
 
   addBubble(bubble, article) {
