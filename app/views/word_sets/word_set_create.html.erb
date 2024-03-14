@@ -9,13 +9,15 @@
         <%= text_field_tag :query,
               params[:query],
               class: "form-control",
-              placeholder: "Type a keyword"
+              placeholder: "Find a word"
           %>
         <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
       <% end %>
     </div>
   </div>
 </div>
+
+<div class="new-words-in-set" ></div>
 
 <!----set is complete, go back to index ----->
 
@@ -28,13 +30,18 @@
     <div class="col-12 col-lg-6">
       <div class="inside-list-create-set">
         <h2 class="list-header-create-set"> Words available </h2>
+
           <% @all_words.each do |word| %>
-          <div data-controller="create-new-instance" class="flexbox-create-set list-item-create-set">
-          <div data-create-new-instance-target="word"><%= word.article %> <%= word.german %> </div>
-          <i data-action="click->create-new-instance#add_word" class="fa-regular fa-square-plus "></i>
+          <div data-controller="create-new-instance" class="flexbox-create-set list-item-create-set" data-create-new-instance-url-value="<%= add_word_to_set_path(@set) %>" data-create-new-instance-word-id-value="<%= #???? %>" >
+
+            <div data-create-new-instance-target="word"> <%= word.german %> - <%= word.english %>
+            </div>
+
+            <i data-action="click->create-new-instance#add_word" class="fa-regular fa-square-plus "></i>
+
           </div>
           <% end %>
-          </div>
+
       </div>
     </div>
   </div>
