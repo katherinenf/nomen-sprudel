@@ -3,7 +3,8 @@
   height: 70px; /* Maintain the aspect ratio */
   position: fixed; /* Position the arrow relative to the browser window */
   bottom: 20px; /* Adjust the distance from the top */
-  left: 20px; /* Adjust the distance from the right */
+  left: 20px;
+  z-index: 999999999; /* Adjust the distance from the right */
 }
 
 .arrow-show {
