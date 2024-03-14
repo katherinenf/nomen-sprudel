@@ -264,7 +264,7 @@ file7 = URI.open("https://dam.malt.com/116c9177-773c-4c73-a8ee-18301a0a8e00?grav
 user7.photo.attach(io: file7, filename: "photo.jpg", content_type: "image/jpg")
 user7.save
 
-user8 = User.create!({ email: 'lucas@practice.com', username: 'Bonjour, Bug Buster Lucus', password: 'sprudel', high_score: 10 })
+user8 = User.create!({ email: 'lucas@practice.com', username: 'Bonjour, Bug Buster Lucas', password: 'sprudel', high_score: 10 })
 file8 = URI.open("https://avatars.githubusercontent.com/u/91123963?v=4")
 user8.photo.attach(io: file8, filename: "photo.jpg", content_type: "image/jpg")
 user8.save
