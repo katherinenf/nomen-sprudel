@@ -23,4 +23,5 @@ Rails.application.routes.draw do
   end
 
   get "word_set_create/:id", to: "word_sets#word_set_create", as: :word_set_create
+  post "word_sets/:word_set_id/word_sets_words", to: "word_sets_words#create", as: :add_word_to_set
 end
