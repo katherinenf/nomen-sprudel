@@ -1,22 +1,29 @@
-
-<div class="list-box-full" data-selection-target="list">
-  <% @words=current_user.words %>
-    <% @words.each do |word|%>
-    <div class="list-item"><%= word.article %> <%= word.german %>
-      <div class="star-box">
-      <% @successes = 0 %>
-      <% if word.masteries.exists?(user_id: current_user.id) %>
-        <% @successes=word.masteries.find_by(user_id: current_user.id).successes %>
-        <% if @successes > 0 %>
-          <% @successes.times do %>
-            <i class="fa-solid fa-star"></i>
-          <% end %>
-        <% end %>
-      <% end %>
-        <% (3 - @successes).times do %>
-          <i class="fa-regular fa-star"></i>
-        <% end %>
+<div class="container inside-list-mastery">
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-6">
+      <div class="inside">
+        <div class="list-box-mastery" data-selection-target="list">
+            <% @words=current_user.words.order(:german) %>
+              <% @words.each do |word|%>
+              <div class="list-item"><%= word.article %> <%= word.german %> (<%= word.english %>)
+                <div class="star-box">
+                <% @successes = 0 %>
+                <% if word.masteries.exists?(user_id: current_user.id) %>
+                  <% @successes=word.masteries.find_by(user_id: current_user.id).successes %>
+                  <% if @successes > 0 %>
+                    <% @successes.times do %>
+                      <i class="fa-solid fa-star"></i>
+                    <% end %>
+                  <% end %>
+                <% end %>
+                  <% (3 - @successes).times do %>
+                    <i class="fa-regular fa-star"></i>
+                  <% end %>
+                </div>
+              </div>
+              <% end %>
+          </div>
+        </div>
       </div>
     </div>
-    <% end %>
-</div>
+  </div>

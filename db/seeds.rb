@@ -9,6 +9,16 @@ WordSet.delete_all
 User.delete_all
 
 p 'creating words'
+# Seed file to populate word sets with sample data
+
+# Create Le Wagon word set
+le_wagon_words = [
+  { english: "party", german: "Party", article: "die" },
+  { english: "beer", german: "Bier", article: "das" },
+  { english: "rake", german: "Rechen", article: "der" },
+  { english: "flashcard", german: "Karteikarte", article: "die" },
+  { english: "City Chicken", german: "Stadthuhn", article: "das" }
+]
 
 # Create animal words
 animal_words = [
@@ -61,7 +71,8 @@ transport_words = [
   { english: "plane", german: "Flugzeug", article: "das" },
   { english: "ship", german: "Schiff", article: "das" },
   { english: "motorcycle", german: "Motorrad", article: "das" },
-  { english: "subway", german: "U-Bahn", article: "die" }
+  { english: "strike", german: "Streik", article: "der" },
+  { english: "delay", german: "Verspätung", article: "die" }
 ]
 
 # Create weather words
@@ -150,6 +161,7 @@ clothing_words = [
 
 
 # Create word sets
+le_wagon_set = WordSet.create(name: "Le Wagon")
 animal_set = WordSet.create(name: "Animals")
 household_object_set = WordSet.create(name: "Household Objects")
 food_set = WordSet.create(name: "Food")
@@ -162,11 +174,15 @@ appliance_set = WordSet.create(name: "Appliances")
 cooking_set = WordSet.create(name: "Cooking")
 clothing_set = WordSet.create(name: "Clothing")
 
-p Word.count
 p WordSet.count
 
 p 'adding words to sets'
 # Add words to word sets
+# Add words to Le Wagon word set
+le_wagon_words.each do |word|
+  le_wagon_set.words.create(word)
+end
+
 animal_words.each do |word|
   animal_set.words.create(word)
 end
@@ -209,6 +225,7 @@ end
 clothing_words.each do |word|
   clothing_set.words.create(word)
 end
+p Word.count
 
 p "adding users"
 # seed users

@@ -21,7 +21,7 @@ class WordSetsController < ApplicationController
 
   def word_set_create
     @set = WordSet.find(params[:id])
-    @all_words = Word.all
+    @all_words = Word.all.order(:german)
     if params[:query].present?
       sql_subquery = <<~SQL
         words.german ILIKE :query

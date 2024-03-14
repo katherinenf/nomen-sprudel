@@ -21,7 +21,7 @@
 
 <!----set is complete, go back to index ----->
 
-<button class="btn-styling btn-position-finish-set">set is complete</button>
+<%= button_to "save my set", practice_set_up_path, method: :get, class: "btn-styling btn-position-finish-set"%>
 
 <!----all words ------------->
 
@@ -46,4 +46,8 @@
       </div>
     </div>
   </div>
+        <div class="inside-arrow">
+        <%= link_to "/practice_set_up" do %>
+          <%= image_tag "arrow.png" , class: "arrow" %>
+        <% end %>
 </div>

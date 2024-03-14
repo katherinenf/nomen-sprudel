@@ -36,7 +36,7 @@ export default class extends Controller {
     if (chosen_article == currentNoun.dataset.article) {
       // add the article to the noun bubble
       currentNoun.innerHTML = `<p>${currentNoun.dataset.article}</p>
-                               <p>${currentNoun.innerText}</p>`
+                               <p>${currentNoun.dataset.german}</p>`
       // display green
       this.nounTargets.forEach(target => {
       target.classList.add("right")
@@ -71,9 +71,6 @@ export default class extends Controller {
       currentNoun.dataset.mastery="false"
 
       // Incorrect answer logic
-      // navigator.vibrate(300); // Vibrate for 200 milliseconds
-      // console.log("WRONG ANSWER");
-
 
       // Add the "shake" class to the clicked element
       clickedElement.classList.add('shake');
