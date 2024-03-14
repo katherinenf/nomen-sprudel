@@ -231,57 +231,57 @@ p "adding users"
 # seed users
 user1 = User.create!({ email: 'oliver@practice.com', username: 'Oliver Giggles', password: 'sprudel' })
 file1 = URI.open("https://i.pinimg.com/736x/b8/2c/33/b82c336a7a0c2d08f10fb9f198383ebf.jpg")
-user1.photo.attach(io: file1, filename: "photo.jpg", content_type: "image/jpg")
+user1.photo.attach(io: file1, filename: "photo.jpg", content_type: "image/jpeg")
 user1.save
 
 user2 = User.create!({ email: 'ava@practice.com', username: 'Ava Jokester', password: 'sprudel' })
 file2 = URI.open("https://i.pinimg.com/736x/f2/82/cc/f282cc2e9214fca44329c59aea11bca3.jpg")
-user2.photo.attach(io: file2, filename: "photo.jpg", content_type: "image/jpg")
+user2.photo.attach(io: file2, filename: "photo.jpg", content_type: "image/jpeg")
 user2.save
 
 user3 = User.create!({ email: 'joyful@practice.com', username: 'Joyful Jester', password: 'sprudel' })
 file3 = URI.open("https://www.imagediamond.com/blog/wp-content/uploads/2020/06/cartoon-boy-images-17.jpg")
-user3.photo.attach(io: file3, filename: "photo.jpg", content_type: "image/jpg")
+user3.photo.attach(io: file3, filename: "photo.jpg", content_type: "image/jpeg")
 user3.save
 
 user4 = User.create!({ email: 'ethan@practice.com', username: 'Ethan WhoopeeWarrior', password: 'sprudel'})
 file4 = URI.open("https://png.pngtree.com/png-clipart/20210314/original/pngtree-funny-cartoon-boy-png-image_6092956.jpg")
-user4.photo.attach(io: file4, filename: "photo.jpg", content_type: "image/jpg")
+user4.photo.attach(io: file4, filename: "photo.jpg", content_type: "image/jpeg")
 user4.save
 
 user5 = User.create!({ email: 'sophie@practice.com', username: 'Sophie Chuckles', password: 'sprudel' })
 file5 = URI.open("https://cdn3.vectorstock.com/i/1000x1000/56/12/funny-young-woman-cartoon-character-vector-41805612.jpg")
-user5.photo.attach(io: file5, filename: "photo.jpg", content_type: "image/jpg")
+user5.photo.attach(io: file5, filename: "photo.jpg", content_type: "image/jpeg")
 user5.save
 
 user6 = User.create!({ email: 'emma@practice.com', username: 'Emmazing Boss Lady', password: 'sprudel', high_score: 100 })
 file6 = URI.open("https://avatars.githubusercontent.com/u/90188399?v=4")
-user6.photo.attach(io: file6, filename: "photo.jpg", content_type: "image/jpg")
+user6.photo.attach(io: file6, filename: "photo.jpg", content_type: "image/jpeg")
 user6.save
 
 user7 = User.create!({ email: 'pedro@practice.com', username: 'Pedro the blackmamba', password: 'sprudel', high_score: 10000 })
 file7 = URI.open("https://dam.malt.com/116c9177-773c-4c73-a8ee-18301a0a8e00?gravity=face&func=face&face_margin=60&w=720&h=720&force_format=jpg")
-user7.photo.attach(io: file7, filename: "photo.jpg", content_type: "image/jpg")
+user7.photo.attach(io: file7, filename: "photo.jpg", content_type: "image/jpeg")
 user7.save
 
 user8 = User.create!({ email: 'lucas@practice.com', username: 'Bonjour, Bug Buster Lucas', password: 'sprudel', high_score: 10 })
 file8 = URI.open("https://avatars.githubusercontent.com/u/91123963?v=4")
-user8.photo.attach(io: file8, filename: "photo.jpg", content_type: "image/jpg")
+user8.photo.attach(io: file8, filename: "photo.jpg", content_type: "image/jpeg")
 user8.save
 
 user9 = User.create!({ email: 'josh@practice.com', username: 'Forever 20 Josh', password: 'sprudel', high_score: 5000 })
 file9 = URI.open("https://ca.slack-edge.com/T02NE0241-U045BSBJQD6-f9f50ddff2bb-512")
-user9.photo.attach(io: file9, filename: "photo.jpg", content_type: "image/jpg")
+user9.photo.attach(io: file9, filename: "photo.jpg", content_type: "image/jpeg")
 user9.save
 
 user10 = User.create!({ email: 'rodrigo@practice.com', username: 'Rodrigo the Ridiculous', password: 'sprudel', high_score: 500 })
 file10 = URI.open("https://ca.slack-edge.com/T02NE0241-U048PL8HTT7-a19e08ee8315-512")
-user10.photo.attach(io: file10, filename: "photo.jpg", content_type: "image/jpg")
+user10.photo.attach(io: file10, filename: "photo.jpg", content_type: "image/jpeg")
 user10.save
 
 user11 = User.create!({ email: 'adam@practice.com', username: 'Adam the Wise Wit', password: 'sprudel', high_score: 12000 })
 file11 = URI.open("https://avatars.githubusercontent.com/u/86358155?v=4")
-user11.photo.attach(io: file11, filename: "photo.jpg", content_type: "image/jpg")
+user11.photo.attach(io: file11, filename: "photo.jpg", content_type: "image/jpeg")
 user11.save
 
 p User.count
