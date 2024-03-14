@@ -71,7 +71,6 @@ export default class extends Controller {
       currentNoun.dataset.mastery="false"
 
       // Incorrect answer logic
-      // navigator.vibrate(200); // Vibrate for 200 milliseconds
 
       // Add the "shake" class to the clicked element
       clickedElement.classList.add('shake');
