@@ -13,4 +13,8 @@ class PagesController < ApplicationController
   def practice_set_up
     @sets = WordSet.all
   end
+
+  def high_scores
+    @users = User.all.order(high_score: :desc)
+  end
 end
