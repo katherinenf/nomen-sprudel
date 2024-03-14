@@ -3,6 +3,7 @@ import { Controller } from "@hotwired/stimulus"
 // Connects to data-controller="create-new-instance"
 export default class extends Controller {
   static targets = ["word"]
+  static values = {url: String, wordId: Number}
 
   connect() {
     console.log("Hello from the controller");
@@ -10,19 +11,20 @@ export default class extends Controller {
 
   add_word(event) {
     console.log("Hello again");
-    event.preventDefault();
+    console.log(this.wordTarget);
+    //console.log(this.buttonTarget);
+    // event.preventDefault();
 
-    fetch(this.wordTarget.action, {
+    fetch(this.urlValue, {
       method: "POST",
-      headers: { "Accept": "application/json" }, // don't know what this does yet
-      body: new FormData(this.wordTarget)
-    })
+      headers: {"Content-Type": "application/json"}, //respond_to as in the lecture
+      body: this.wordIdValue
+      })
+    .then(response => response.json)
     .then((data) => {
-    if (data.inserted_item) {
-      // beforeend could also be dynamic with Stimulus values
-      this.itemsTarget.insertAdjacentHTML("beforeend", data.inserted_item)
-    }
-    this.wordTarget.outerHTML = data.form
+      console.log(data)
+      //create new instance in set
+      // changing on the view
     })
   }
 }

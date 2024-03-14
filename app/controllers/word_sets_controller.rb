@@ -23,14 +23,17 @@ class WordSetsController < ApplicationController
     @set = WordSet.find(params[:id])
     @all_words = Word.all
     if params[:query].present?
-      @all_words = @all_words.where("german ILIKE ?", "%#{params[:query]}%")
+      sql_subquery = <<~SQL
+        words.german ILIKE :query
+        OR words.english ILIKE :query
+      SQL
+      @all_words = @all_words.where(sql_subquery, query: "%#{params[:query]}%")
     end
   end
 
   def create
     @new_word_set = WordSet.new(new_word_set_params)
     @new_word_set.save!
-
     redirect_to word_set_create_path(@new_word_set)
   end
 

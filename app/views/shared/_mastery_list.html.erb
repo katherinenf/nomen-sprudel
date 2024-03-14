@@ -1,10 +1,9 @@
 
-<h2 class="list-header"> Your Progress </h2>
-  <div class="list-box-full" data-selection-target="list">
+<div class="list-box-full" data-selection-target="list">
   <% @words=current_user.words %>
     <% @words.each do |word|%>
     <div class="list-item"><%= word.article %> <%= word.german %>
-      <div>
+      <div class="star-box">
       <% @successes = 0 %>
       <% if word.masteries.exists?(user_id: current_user.id) %>
         <% @successes=word.masteries.find_by(user_id: current_user.id).successes %>
