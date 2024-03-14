@@ -4,7 +4,7 @@
   <title>We're sorry, but something went wrong (500)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
-  .error-page {
+  .error-page-500 {
     background-color: #6e89b8;
     color: #2E2F30;
     text-align: center;
@@ -12,13 +12,13 @@
     margin: 0;
   }
 
-  .error-page div.dialog {
+  .error-page-500 div.text {
     width: 95%;
     max-width: 33em;
     margin: 4em auto 0;
   }
 
-  .error-page div.dialog > div {
+  .error-page-500 div.text > div {
     border: 1px solid #CCC;
     border-right-color: #999;
     border-left-color: #999;
@@ -31,13 +31,13 @@
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
   }
 
-  .error-page h1 {
+  .error-page-500 h1 {
     font-size: 100%;
     color: #e0ca27;
     line-height: 1.5em;
   }
 
-  .error-page div.dialog > p {
+  .error-page-500 div.text > p {
     margin: 0 0 1em;
     padding: 1em;
     background-color: #f0eaec;
@@ -54,9 +54,9 @@
   </style>
 </head>
 
-<body class="error-page">
+<body class="error-page-500">
   <!-- This file lives in public/500.html -->
-  <div class="dialog">
+  <div class="text">
     <div>
       <h1>We're sorry, but something went wrong.</h1>
     </div>
