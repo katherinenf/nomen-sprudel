@@ -24,7 +24,7 @@ export default class extends Controller {
     })
 
     .then(response => {
-      this.element.style.backgroundColor = "white";
+      this.element.style.backgroundColor = '#8EC3AE';
       event.target.classList.add("d-none");
     })
   }

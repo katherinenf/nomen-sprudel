@@ -16,7 +16,8 @@ Rails.application.routes.draw do
   post "masteries" => "masteries#updateAll"
 
   get "/profile" => "pages#profile"
-
+  get "/high_scores" => "pages#high_scores"
+  
   resources :masteries, only: [:index]
   resources :word_sets, only: [:index, :show, :new, :create] do
     resources :word, only: [:index, :new, :create, :edit]
