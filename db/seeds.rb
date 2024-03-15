@@ -71,8 +71,8 @@ transport_words = [
   { english: "plane", german: "Flugzeug", article: "das" },
   { english: "ship", german: "Schiff", article: "das" },
   { english: "motorcycle", german: "Motorrad", article: "das" },
-  { english: "strike", german: "Streik", article: "der" },
-  { english: "delay", german: "Verspätung", article: "die" }
+  { english: "subway", german: "U-Bahn", article: "die" },
+  { english: "city train", german: "S-Bahn", article: "die" }
 ]
 
 # Create weather words
