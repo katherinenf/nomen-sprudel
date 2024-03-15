@@ -285,6 +285,27 @@ file11 = URI.open("https://avatars.githubusercontent.com/u/86358155?v=4")
 user11.photo.attach(io: file11, filename: "photo.jpg", content_type: "image/jpeg")
 user11.save
 
+user12 = User.create!({ email: 'ines@practice.com', username: 'Dutsch Queen', password: 'sprudel', high_score: 1200 })
+file12 = URI.open("https://avatars.githubusercontent.com/u/153083867?v=4")
+user12.photo.attach(io: file12, filename: "photo.jpg", content_type: "image/jpeg")
+user12.save
+
+user13 = User.create!({ email: 'katherine@practice.com', username: 'Kassie', password: 'sprudel', high_score: 1500 })
+file13 = URI.open("https://avatars.githubusercontent.com/u/51514446?v=4")
+user13.photo.attach(io: file13, filename: "photo.jpg", content_type: "image/jpeg")
+user13.save
+
+user14 = User.create!({ email: 'valerija@practice.com', username: '
+  Valerija Kuzema', password: 'sprudel', high_score: 1000 })
+file14 = URI.open("https://avatars.githubusercontent.com/u/155888184?v=4")
+user14.photo.attach(io: file14, filename: "photo.jpg", content_type: "image/jpeg")
+user14.save
+
+user15 = User.create!({ email: 'dinusha@practice.com', username: 'Hansi', password: 'sprudel', high_score: 1100 })
+file15 = URI.open("https://avatars.githubusercontent.com/u/156579754?v=4")
+user15.photo.attach(io: file15, filename: "photo.jpg", content_type: "image/jpeg")
+user15.save
+
 p User.count
 
 p "seeding masteries"
