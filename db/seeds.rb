@@ -13,10 +13,11 @@ p 'creating words'
 
 # Create Le Wagon word set
 le_wagon_words = [
-  { english: "party", german: "Party", article: "die" },
-  { english: "beer", german: "Bier", article: "das" },
   { english: "rake", german: "Rechen", article: "der" },
   { english: "flashcard", german: "Karteikarte", article: "die" },
+  { english: "party", german: "Party", article: "die" },
+  { english: "beer", german: "Bier", article: "das" },
+  { english: "banana", german: "Banane", article: "die" },
   { english: "City Chicken", german: "Stadthuhn", article: "das" }
 ]
 
@@ -51,7 +52,6 @@ household_object_words = [
 # Create common food words
 food_words = [
   { english: "apple", german: "Apfel", article: "der" },
-  { english: "banana", german: "Banane", article: "die" },
   { english: "bread", german: "Brot", article: "das" },
   { english: "cheese", german: "Käse", article: "der" },
   { english: "rice", german: "Reis", article: "der" },
@@ -72,7 +72,8 @@ transport_words = [
   { english: "ship", german: "Schiff", article: "das" },
   { english: "motorcycle", german: "Motorrad", article: "das" },
   { english: "subway", german: "U-Bahn", article: "die" },
-  { english: "city train", german: "S-Bahn", article: "die" }
+  { english: "city train", german: "S-Bahn", article: "die" },
+  { english: "delay", german: "Verspätung", article: "die" }
 ]
 
 # Create weather words
@@ -297,6 +298,7 @@ User.all.each do |user|
   end
   user.update(high_score: high_score)
 end
+
 p Mastery.count
 
 p "all done!"
