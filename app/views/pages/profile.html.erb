@@ -18,8 +18,10 @@
     </div>
     <div class="col-md-4">
       <div class="highscore">
-        <h2>Highscore⚡️</h2>
-        <%= current_user.high_score %>
+      <div class="d-flex justify-content-between" >
+        <h2> Your Highscore⚡️</strong></h2>
+        <h2><strong><%= current_user.high_score %></h2>
+      </div>
            <div class="inside-crown">
               <%= link_to "/high_scores" do %>
                 <%= image_tag "crown.png" , class: "crown" %>
