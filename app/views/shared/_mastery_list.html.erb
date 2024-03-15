@@ -7,6 +7,7 @@
               <% @words.each do |word|%>
               <div class="list-item"><%= word.article %> <%= word.german %> (<%= word.english %>)
                 <div class="star-box">
+                  <p class="text-truncate">
                 <% @successes = 0 %>
                 <% if word.masteries.exists?(user_id: current_user.id) %>
                   <% @successes=word.masteries.find_by(user_id: current_user.id).successes %>
@@ -19,7 +20,7 @@
                   <% (3 - @successes).times do %>
                     <i class="fa-regular fa-star"></i>
                   <% end %>
-                </div>
+                </p></div>
               </div>
               <% end %>
           </div>

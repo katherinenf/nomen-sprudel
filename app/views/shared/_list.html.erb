@@ -6,8 +6,9 @@
         <h2 class="list-header"> Words in this list </h2>
           <div class="list-box" data-selection-target="list">
             <% @words.each do |word|%>
-            <div class="list-item"><%= word.german %> (<%= word.english %>)
-              <div>
+            <div class="list-item"><p><%= word.german %> (<%= word.english %>)</p>
+              <div class="star-box">
+              <p class="text-truncate">
               <% @successes = 0 %>
               <% if word.masteries.exists?(user_id: current_user.id) %>
                 <% @successes=word.masteries.find_by(user_id: current_user.id).successes %>
@@ -20,6 +21,7 @@
                 <% (3 - @successes).times do %>
                   <i class="fa-regular fa-star"></i>
                 <% end %>
+                </p>
               </div>
             </div>
             <% end %>
